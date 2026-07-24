@@ -8,10 +8,24 @@ Marketing website for **Precision Tree Service** — a local tree care business.
 - TypeScript
 - Tailwind CSS
 
+## Location
+
+Project lives on the LaCie drive:
+
+```text
+/Volumes/BryanXBTLacie/Projects/tree-service
+```
+
+## Live preview (GitHub Pages)
+
+https://bryanxbt.github.io/precision-tree-service/
+
+Every push to `main` rebuilds and updates that link (GitHub Actions).
+
 ## Getting started
 
 ```bash
-cd ~/Projects/tree-service
+cd /Volumes/BryanXBTLacie/Projects/tree-service
 npm install
 npm run dev
 ```
@@ -47,8 +61,12 @@ Edit **`src/lib/site.ts`**:
 
 ## Deploy
 
+Repo (bryanxbt): https://github.com/bryanxbt/precision-tree-service  
+
+Push to `main` to update the live GitHub Pages preview:
+
 ```bash
-# from this repo, with bryanxbt active:
 gh auth switch -u bryanxbt
-# create remote + push when ready
+cd /Volumes/BryanXBTLacie/Projects/tree-service
+git add -A && git commit -m "Your message" && git push
 ```
