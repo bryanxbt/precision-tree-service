@@ -1,8 +1,8 @@
 export const site = {
   name: "Precision Tree Service",
-  tagline: "Safe, professional tree care you can trust",
+  tagline: "Tree services from a local crew you can rely on",
   description:
-    "Local tree removal, trimming, stump grinding, and emergency storm response. Licensed, insured, and committed to clean job sites.",
+    "Tree removal, trimming, stump grinding, and storm cleanup — done carefully, priced fairly, and finished clean. A small local crew homeowners can count on.",
   // Update these when you have real details
   phone: "(555) 123-4567",
   phoneHref: "tel:+15551234567",

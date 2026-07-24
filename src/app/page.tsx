@@ -10,10 +10,10 @@ export default function HomePage() {
         <div className="mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-2 lg:items-center lg:py-24">
           <div>
             <p className="inline-flex items-center rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-emerald-100 backdrop-blur">
-              Licensed · Insured · Local
+              Local · Insured · Cleanup included
             </p>
             <h1 className="mt-5 text-4xl font-bold tracking-tight sm:text-5xl lg:text-[3.25rem] lg:leading-[1.1]">
-              Precision tree care for homes that deserve better.
+              Tree services from a local crew you can rely on
             </h1>
             <p className="mt-5 max-w-lg text-lg leading-relaxed text-emerald-50/90">
               {site.description}
@@ -62,12 +62,9 @@ export default function HomePage() {
                 ))}
               </ul>
               <div className="mt-8 rounded-2xl bg-emerald-950/40 px-4 py-3 text-sm text-emerald-100/85">
-                Serving <strong className="text-white">{site.serviceArea}</strong>
-                . Update location in{" "}
-                <code className="rounded bg-black/20 px-1 text-xs">
-                  src/lib/site.ts
-                </code>
-                .
+                Proudly serving{" "}
+                <strong className="text-white">{site.serviceArea}</strong>.
+                Free estimates — no pressure.
               </div>
             </div>
           </div>
