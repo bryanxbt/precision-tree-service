@@ -36,6 +36,13 @@ export const site = {
   insured: true,
   bonded: false,
   freeEstimates: true,
+  /** Brand assets in public/brand/ — paths include basePath for GitHub Pages */
+  logo: {
+    mark: withBasePath("/brand/logo-mark.png"),
+    wordmark: withBasePath("/brand/logo-wordmark.png"),
+    markAlt: "Precision Tree Services logo",
+    wordmarkAlt: "Precision Tree Services",
+  },
 } as const;
 
 export const navLinks = [

@@ -40,6 +40,15 @@ Edit **`src/lib/site.ts`**:
 - Service list and gallery placeholders
 - Tagline and about copy hooks
 
+### Brand logos
+
+| File | Use |
+|------|-----|
+| `public/brand/logo-mark.png` | Header + favicon mark |
+| `public/brand/logo-wordmark.png` | Footer wordmark |
+
+Paths are wired via `site.logo` in `src/lib/site.ts`.
+
 ## Pages
 
 | Route       | Purpose                          |

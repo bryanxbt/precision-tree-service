@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import {
   navLinks,
@@ -19,8 +20,16 @@ export function Footer() {
     <footer className="mt-auto border-t border-emerald-950/10 bg-emerald-950 text-emerald-50 pb-20 md:pb-0">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-2 lg:grid-cols-4">
         <div>
-          <p className="text-lg font-bold tracking-tight">{site.name}</p>
-          <p className="mt-2 max-w-xs text-sm leading-relaxed text-emerald-100/80">
+          <Link href="/" className="inline-block rounded-xl bg-stone-50 p-2 shadow-sm">
+            <Image
+              src={site.logo.wordmark}
+              alt={site.logo.wordmarkAlt}
+              width={160}
+              height={160}
+              className="h-auto w-36 object-contain sm:w-40"
+            />
+          </Link>
+          <p className="mt-3 max-w-xs text-sm leading-relaxed text-emerald-100/80">
             {site.tagline}. Serving {site.serviceArea}.
           </p>
           <a

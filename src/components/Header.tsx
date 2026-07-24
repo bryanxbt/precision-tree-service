@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -11,13 +12,18 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-emerald-950/10 bg-white/90 backdrop-blur-md">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
-        <Link href="/" className="group flex items-center gap-2.5">
-          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-emerald-800 text-white shadow-sm">
-            <TreeIcon className="h-5 w-5" />
-          </span>
-          <span className="leading-tight">
-            <span className="block text-sm font-bold tracking-tight text-emerald-950 sm:text-base">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-2.5 sm:px-6">
+        <Link href="/" className="group flex min-w-0 items-center gap-2.5">
+          <Image
+            src={site.logo.mark}
+            alt={site.logo.markAlt}
+            width={40}
+            height={40}
+            className="h-9 w-9 shrink-0 object-contain sm:h-10 sm:w-10"
+            priority
+          />
+          <span className="min-w-0 leading-tight">
+            <span className="block truncate text-sm font-bold tracking-tight text-emerald-950 sm:text-base">
               {site.name}
             </span>
             <span className="hidden text-xs text-emerald-800/70 sm:block">
@@ -104,25 +110,5 @@ export function Header() {
         </nav>
       )}
     </header>
-  );
-}
-
-function TreeIcon({ className }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.75"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden
-    >
-      <path d="M12 22v-7" />
-      <path d="M9 22h6" />
-      <path d="M12 15c-3.5 0-6-2.2-6-5.5C6 6.5 9 3 12 2c3 1 6 4.5 6 7.5 0 3.3-2.5 5.5-6 5.5Z" />
-      <path d="M8.5 10.5c1 .5 2.2.8 3.5.8s2.5-.3 3.5-.8" />
-    </svg>
   );
 }
