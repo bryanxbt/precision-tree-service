@@ -156,14 +156,56 @@ export const services = [
   },
 ] as const;
 
-/** Cities/areas you serve — update names for local SEO */
+/** Cities/areas you serve — local SEO pages */
 export const serviceAreas = [
-  { slug: "your-city", name: "Your City", blurb: "Primary service area for residential and light commercial tree work." },
-  { slug: "north-suburbs", name: "North Suburbs", blurb: "Trimming, removals, and storm response for nearby neighborhoods." },
-  { slug: "south-suburbs", name: "South Suburbs", blurb: "Full-service tree care including stump grinding and lot clearing." },
-  { slug: "east-side", name: "East Side", blurb: "Local crew for hazardous trees, roof clearance, and cleanup." },
-  { slug: "west-side", name: "West Side", blurb: "Dependable tree removal and maintenance for homes and businesses." },
-  { slug: "surrounding-areas", name: "Surrounding Areas", blurb: "Call us — if you are nearby we can often schedule a visit." },
+  {
+    slug: "kokomo",
+    name: "Kokomo",
+    blurb:
+      "Tree removal, trimming, stump grinding, and storm cleanup for Kokomo homes and businesses.",
+  },
+  {
+    slug: "tipton",
+    name: "Tipton",
+    blurb:
+      "Local tree service in Tipton — safe removals, pruning, and full cleanup.",
+  },
+  {
+    slug: "cicero",
+    name: "Cicero",
+    blurb:
+      "Residential and light commercial tree care for Cicero and nearby neighborhoods.",
+  },
+  {
+    slug: "noblesville",
+    name: "Noblesville",
+    blurb:
+      "Tree removal, trimming, and storm response serving Noblesville properties.",
+  },
+  {
+    slug: "carmel",
+    name: "Carmel",
+    blurb:
+      "Professional tree work in Carmel with careful cleanup and free estimates.",
+  },
+  {
+    slug: "westfield",
+    name: "Westfield",
+    blurb:
+      "Tree service in Westfield for removals, stump grinding, and lot clearing.",
+  },
+  {
+    slug: "fishers",
+    name: "Fishers",
+    blurb:
+      "Reliable tree care for Fishers homeowners — from trim jobs to full removals.",
+  },
+  {
+    slug: "indianapolis",
+    name: "Indianapolis",
+    blurb:
+      "Tree removal, trimming, and emergency storm work across Indianapolis.",
+  },
 ] as const;
 
 export const processSteps = [
