@@ -16,7 +16,7 @@ export const site = {
   phoneHref: "tel:+15551234567",
   email: "hello@precisiontreeservice.com",
   emailHref: "mailto:hello@precisiontreeservice.com",
-  serviceArea: "Your city & surrounding areas",
+  serviceArea: "North Indy & surrounding areas",
   hours: "Mon–Sat 7am–6pm · Emergency 24/7",
   hoursDetailed: [
     { day: "Monday", time: "7:00am – 6:00pm" },
