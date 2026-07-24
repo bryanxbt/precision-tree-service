@@ -18,8 +18,13 @@ import {
 export default function HomePage() {
   return (
     <>
-      {/* Hero + quote form (Engledow-style conversion layout) */}
-      <section className="relative overflow-hidden text-white">
+      {/*
+        Above-the-fold hero:
+        - Top: copy (left) + wordmark (right) on photo
+        - Bottom: free quote form (no need to scroll on typical desktop/laptop)
+        Header is sticky (~4.5rem); hero fills remaining viewport height.
+      */}
+      <section className="relative flex min-h-[calc(100svh-4.5rem)] flex-col overflow-hidden text-white">
         <Image
           src={heroImage.src}
           alt={heroImage.alt}
@@ -28,40 +33,61 @@ export default function HomePage() {
           sizes="100vw"
           className="object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-emerald-950/95 via-emerald-950/85 to-emerald-900/70" />
-        <div className="absolute inset-0 bg-gradient-to-t from-emerald-950/50 via-transparent to-emerald-950/30" />
-        <div className="relative z-10 mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 sm:py-16 lg:grid-cols-2 lg:items-center lg:py-20">
-          <div>
-            <p className="inline-flex items-center rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-emerald-100 backdrop-blur">
-              {site.serviceArea} · Free estimates
-            </p>
-            <h1 className="mt-5 text-4xl font-bold tracking-tight sm:text-5xl lg:text-[3.15rem] lg:leading-[1.1]">
-              Tree services from a local crew you can rely on
-            </h1>
-            <p className="mt-5 max-w-lg text-lg leading-relaxed text-emerald-50/90">
-              {site.description}
-            </p>
-            <ul className="mt-6 grid gap-2 sm:grid-cols-2">
-              {trustPoints.slice(0, 4).map((item) => (
-                <li key={item} className="flex gap-2 text-sm text-emerald-50/95">
-                  <span className="font-bold text-amber-400">✓</span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-            <p className="mt-6 text-sm text-emerald-100/80">
-              Prefer to talk? Call{" "}
-              <a href={site.phoneHref} className="font-semibold text-white">
-                {site.phone}
-              </a>
-              <span className="block sm:inline sm:before:content-['·_']">
-                {site.hours}
-              </span>
-            </p>
+        <div className="absolute inset-0 bg-gradient-to-r from-emerald-950/95 via-emerald-950/88 to-emerald-900/65" />
+        <div className="absolute inset-0 bg-gradient-to-b from-emerald-950/35 via-transparent to-emerald-950/80" />
+
+        <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-1 flex-col px-4 py-4 sm:px-6 sm:py-5 lg:py-6">
+          {/* Top half — message + word logo */}
+          <div className="grid min-h-0 flex-1 grid-cols-1 items-center gap-4 lg:grid-cols-2 lg:gap-10">
+            <div className="min-w-0">
+              <p className="inline-flex items-center rounded-full border border-white/20 bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-emerald-100 backdrop-blur sm:text-xs">
+                {site.serviceArea} · Free estimates
+              </p>
+              <h1 className="mt-3 text-3xl font-bold tracking-tight sm:mt-4 sm:text-4xl lg:text-[2.65rem] lg:leading-[1.12] xl:text-5xl">
+                Tree services from a local crew you can rely on
+              </h1>
+              <p className="mt-3 max-w-lg text-sm leading-relaxed text-emerald-50/90 sm:mt-4 sm:text-base lg:text-lg">
+                {site.description}
+              </p>
+              <ul className="mt-3 hidden gap-x-4 gap-y-1.5 sm:mt-4 sm:grid sm:grid-cols-2">
+                {trustPoints.slice(0, 4).map((item) => (
+                  <li
+                    key={item}
+                    className="flex gap-2 text-xs text-emerald-50/95 sm:text-sm"
+                  >
+                    <span className="font-bold text-amber-400">✓</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-3 text-xs text-emerald-100/85 sm:mt-4 sm:text-sm">
+                Prefer to talk? Call{" "}
+                <a href={site.phoneHref} className="font-semibold text-white">
+                  {site.phone}
+                </a>
+                <span className="block sm:inline sm:before:content-['·_']">
+                  {site.hours}
+                </span>
+              </p>
+            </div>
+
+            <div className="flex items-center justify-center lg:justify-end">
+              <div className="w-full max-w-[220px] rounded-2xl bg-stone-50/95 p-3 shadow-2xl ring-1 ring-white/30 backdrop-blur sm:max-w-[260px] sm:p-4 lg:max-w-[300px] lg:p-5">
+                <Image
+                  src={site.logo.wordmark}
+                  alt={site.logo.wordmarkAlt}
+                  width={300}
+                  height={300}
+                  priority
+                  className="h-auto w-full object-contain"
+                />
+              </div>
+            </div>
           </div>
 
-          <div id="quote">
-            <QuoteForm variant="compact" />
+          {/* Bottom half — free quote (stays in first viewport) */}
+          <div id="quote" className="mt-4 shrink-0 sm:mt-5">
+            <QuoteForm variant="hero" />
           </div>
         </div>
       </section>

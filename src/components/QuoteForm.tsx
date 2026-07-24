@@ -1,13 +1,13 @@
 "use client";
 
 import { FormEvent, useId, useState } from "react";
-import { services } from "@/lib/site";
+import { services, site } from "@/lib/site";
 
 type Status = "idle" | "sending" | "sent" | "error";
 
 type QuoteFormProps = {
   /** Compact hero form (name, phone, message only) */
-  variant?: "full" | "compact";
+  variant?: "full" | "compact" | "hero";
   className?: string;
   /** Light text styles for dark hero backgrounds */
   onDark?: boolean;
@@ -59,43 +59,83 @@ export function QuoteForm({
     );
   }
 
-  if (variant === "compact") {
+  if (variant === "compact" || variant === "hero") {
+    const isHero = variant === "hero";
     const input =
-      "w-full rounded-xl border border-stone-300 bg-white px-3 py-2.5 text-sm text-stone-900 outline-none ring-emerald-700/30 focus:border-emerald-700 focus:ring-2";
+      "w-full rounded-xl border border-stone-300 bg-white px-3 py-2 text-sm text-stone-900 outline-none ring-emerald-700/30 focus:border-emerald-700 focus:ring-2 sm:py-2.5";
     return (
       <form
         onSubmit={onSubmit}
-        className={`space-y-3 rounded-2xl bg-white p-5 shadow-2xl sm:p-6 ${className}`}
+        className={`rounded-2xl bg-white shadow-2xl ${
+          isHero ? "space-y-2.5 p-4 sm:space-y-3 sm:p-5" : "space-y-3 p-5 sm:p-6"
+        } ${className}`}
       >
-        <div>
-          <p className="text-lg font-bold text-stone-900">Get a free quote</p>
-          <p className="mt-1 text-sm text-stone-600">
-            No pressure. We usually respond the same day.
-          </p>
+        <div className="flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between sm:gap-4">
+          <div>
+            <p className="text-base font-bold text-stone-900 sm:text-lg">
+              Get a free quote
+            </p>
+            <p className="mt-0.5 text-xs text-stone-600 sm:text-sm">
+              No pressure. Prefer to talk?{" "}
+              <a
+                href={site.phoneHref}
+                className="font-semibold text-emerald-900 hover:underline"
+              >
+                Call {site.phone}
+              </a>
+            </p>
+          </div>
         </div>
-        <input
-          name="name"
-          required
-          placeholder="Full name *"
-          className={input}
-          aria-label="Full name"
-        />
-        <input
-          name="phone"
-          type="tel"
-          required
-          placeholder="Phone *"
-          className={input}
-          aria-label="Phone"
-        />
-        <textarea
-          name="message"
-          required
-          rows={3}
-          placeholder="Short message about your needs *"
-          className={`${input} resize-y`}
-          aria-label="Message"
-        />
+        <div
+          className={
+            isHero
+              ? "grid gap-2 sm:grid-cols-2 lg:grid-cols-4 sm:gap-3"
+              : "space-y-3"
+          }
+        >
+          <input
+            name="name"
+            required
+            placeholder="Full name *"
+            className={input}
+            aria-label="Full name"
+          />
+          <input
+            name="phone"
+            type="tel"
+            required
+            placeholder="Phone *"
+            className={input}
+            aria-label="Phone"
+          />
+          {isHero ? (
+            <input
+              name="message"
+              required
+              placeholder="What do you need help with? *"
+              className={`${input} sm:col-span-2 lg:col-span-1`}
+              aria-label="Message"
+            />
+          ) : (
+            <textarea
+              name="message"
+              required
+              rows={3}
+              placeholder="Short message about your needs *"
+              className={`${input} resize-y`}
+              aria-label="Message"
+            />
+          )}
+          {isHero && (
+            <button
+              type="submit"
+              disabled={status === "sending"}
+              className="w-full rounded-full bg-amber-500 px-4 py-2.5 text-sm font-bold text-emerald-950 shadow-sm transition hover:bg-amber-400 disabled:opacity-70 lg:col-span-1"
+            >
+              {status === "sending" ? "Sending…" : "Send request"}
+            </button>
+          )}
+        </div>
         <label className="flex items-start gap-2 text-xs text-stone-500">
           <input
             type="checkbox"
@@ -107,13 +147,15 @@ export function QuoteForm({
             I consent to being contacted about my tree service request.
           </span>
         </label>
-        <button
-          type="submit"
-          disabled={status === "sending"}
-          className="w-full rounded-full bg-amber-500 px-6 py-3 text-sm font-bold text-emerald-950 shadow-sm transition hover:bg-amber-400 disabled:opacity-70"
-        >
-          {status === "sending" ? "Sending…" : "Send free quote request"}
-        </button>
+        {!isHero && (
+          <button
+            type="submit"
+            disabled={status === "sending"}
+            className="w-full rounded-full bg-amber-500 px-6 py-3 text-sm font-bold text-emerald-950 shadow-sm transition hover:bg-amber-400 disabled:opacity-70"
+          >
+            {status === "sending" ? "Sending…" : "Send free quote request"}
+          </button>
+        )}
       </form>
     );
   }
