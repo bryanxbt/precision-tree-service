@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Precision Tree Service
 
-## Getting Started
+Marketing website for **Precision Tree Service** — a local tree care business.
 
-First, run the development server:
+## Stack
+
+- Next.js (App Router)
+- TypeScript
+- Tailwind CSS
+
+## Getting started
 
 ```bash
+cd ~/Projects/tree-service
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Customize business details
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Edit **`src/lib/site.ts`**:
 
-## Learn More
+- Phone, email, service area, hours
+- Service list and gallery placeholders
+- Tagline and about copy hooks
 
-To learn more about Next.js, take a look at the following resources:
+## Pages
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Route       | Purpose                          |
+| ----------- | -------------------------------- |
+| `/`         | Home / hero / services preview   |
+| `/services` | Full service list                |
+| `/about`    | Story and values                 |
+| `/gallery`  | Project placeholders             |
+| `/contact`  | Free quote form (client demo)    |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Next steps
 
-## Deploy on Vercel
+- [ ] Real phone, email, city/service area
+- [ ] Business story and owner bios
+- [ ] Real gallery photos in `public/gallery`
+- [ ] Wire quote form to email (Resend / Formspree / etc.)
+- [ ] Deploy to Vercel under `bryanxbt`
+- [ ] Custom domain + Google Business Profile link
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deploy
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+# from this repo, with bryanxbt active:
+gh auth switch -u bryanxbt
+# create remote + push when ready
+```

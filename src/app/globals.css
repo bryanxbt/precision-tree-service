@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fafaf9;
+  --foreground: #1c1917;
 }
 
 @theme inline {
@@ -12,15 +12,24 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+/* Subtle pattern for hero / gallery placeholders */
+.tree-pattern {
+  background-image:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(255, 255, 255, 0.06) 0,
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 80% 0%,
+      rgba(16, 185, 129, 0.15) 0,
+      transparent 40%
+    ),
+    linear-gradient(145deg, #064e3b 0%, #065f46 40%, #14532d 100%);
 }
