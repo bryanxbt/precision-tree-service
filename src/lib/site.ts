@@ -1,3 +1,5 @@
+import { withBasePath } from "@/lib/paths";
+
 /**
  * Business content for Precision Tree Service.
  * Update phone, email, cities, social links, and reviews as you go.
@@ -256,9 +258,9 @@ export const faqs = [
   },
 ] as const;
 
-/** Hero background (home page) */
+/** Hero background (home page) — paths include basePath for GitHub Pages */
 export const heroImage = {
-  src: "/hero/tree-removal-hero.jpg",
+  src: withBasePath("/hero/tree-removal-hero.jpg"),
   alt: "Professional tree removal crew at work",
 } as const;
 
@@ -267,31 +269,31 @@ export const galleryItems = [
     title: "Large oak removal",
     category: "Tree Removal",
     caption: "Full takedown and cleanup on a residential lot",
-    src: "/gallery/large-oak-removal.jpg",
+    src: withBasePath("/gallery/large-oak-removal.jpg"),
   },
   {
     title: "Canopy lift & thin",
     category: "Trimming",
     caption: "Improved light and clearance over the driveway",
-    src: "/gallery/canopy-lift-thin.jpg",
+    src: withBasePath("/gallery/canopy-lift-thin.jpg"),
   },
   {
     title: "Storm cleanup",
     category: "Emergency",
     caption: "Fast response after a windstorm",
-    src: "/gallery/storm-cleanup.jpg",
+    src: withBasePath("/gallery/storm-cleanup.jpg"),
   },
   {
     title: "Backyard access job",
     category: "Tree Removal",
     caption: "Tight-space removal without property damage",
-    src: "/gallery/backyard-access.jpg",
+    src: withBasePath("/gallery/backyard-access.jpg"),
   },
   {
     title: "Lot prep for build",
     category: "Lot Clearing",
     caption: "Selective clearing for a new home site",
-    src: "/gallery/lot-prep.jpg",
+    src: withBasePath("/gallery/lot-prep.jpg"),
   },
 ] as const;
 

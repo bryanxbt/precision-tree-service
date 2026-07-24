@@ -4,16 +4,21 @@ import type { NextConfig } from "next";
 const repoName = "precision-tree-service";
 
 const isGitHubPages = process.env.GITHUB_PAGES === "true";
+const basePath = isGitHubPages ? `/${repoName}` : "";
 
 const nextConfig: NextConfig = {
   // Static site so GitHub Pages can host a public preview URL
   output: "export",
   images: { unoptimized: true },
   trailingSlash: true,
+  // Used by withBasePath() for public/ image URLs
+  env: {
+    NEXT_PUBLIC_BASE_PATH: basePath,
+  },
   ...(isGitHubPages
     ? {
-        basePath: `/${repoName}`,
-        assetPrefix: `/${repoName}/`,
+        basePath,
+        assetPrefix: `${basePath}/`,
       }
     : {}),
 };
