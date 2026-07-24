@@ -12,8 +12,8 @@ export const site = {
   /** Public site URL (GitHub Pages preview for now) */
   url: "https://bryanxbt.github.io/precision-tree-service",
   // --- Update these with real business details ---
-  phone: "(555) 123-4567",
-  phoneHref: "tel:+15551234567",
+  phone: "(765) 867-1823",
+  phoneHref: "tel:+17658671823",
   email: "hello@precisiontreeservice.com",
   emailHref: "mailto:hello@precisiontreeservice.com",
   serviceArea: "North Indy & surrounding areas",
