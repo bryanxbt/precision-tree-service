@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { CTABanner } from "@/components/CTABanner";
 import { FAQ } from "@/components/FAQ";
@@ -6,6 +7,7 @@ import { QuoteForm } from "@/components/QuoteForm";
 import { Testimonials } from "@/components/Testimonials";
 import {
   galleryItems,
+  heroImage,
   serviceAreas,
   services,
   site,
@@ -17,8 +19,18 @@ export default function HomePage() {
   return (
     <>
       {/* Hero + quote form (Engledow-style conversion layout) */}
-      <section className="tree-pattern relative overflow-hidden text-white">
-        <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 sm:py-16 lg:grid-cols-2 lg:items-center lg:py-20">
+      <section className="relative overflow-hidden text-white">
+        <Image
+          src={heroImage.src}
+          alt={heroImage.alt}
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-emerald-950/95 via-emerald-950/85 to-emerald-900/70" />
+        <div className="absolute inset-0 bg-gradient-to-t from-emerald-950/50 via-transparent to-emerald-950/30" />
+        <div className="relative z-10 mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 sm:py-16 lg:grid-cols-2 lg:items-center lg:py-20">
           <div>
             <p className="inline-flex items-center rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-emerald-100 backdrop-blur">
               {site.serviceArea} · Free estimates
@@ -211,21 +223,21 @@ export default function HomePage() {
           </Link>
         </div>
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {galleryItems.slice(0, 3).map((item, i) => (
-            <div
+          {galleryItems.slice(0, 3).map((item) => (
+            <Link
               key={item.title}
-              className="overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-sm"
+              href="/gallery"
+              className="group overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-sm transition hover:shadow-md"
             >
-              <div
-                className={`flex aspect-[4/3] items-end bg-gradient-to-br p-4 text-white ${
-                  [
-                    "from-emerald-900 to-green-700",
-                    "from-lime-900 to-emerald-700",
-                    "from-stone-800 to-emerald-900",
-                  ][i]
-                }`}
-              >
-                <span className="rounded-full bg-black/25 px-3 py-1 text-xs font-semibold uppercase tracking-wide">
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <Image
+                  src={item.src}
+                  alt={item.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover transition duration-300 group-hover:scale-105"
+                />
+                <span className="absolute bottom-3 left-3 rounded-full bg-black/50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white backdrop-blur">
                   {item.category}
                 </span>
               </div>
@@ -233,7 +245,7 @@ export default function HomePage() {
                 <h3 className="font-semibold text-stone-900">{item.title}</h3>
                 <p className="mt-1 text-sm text-stone-600">{item.caption}</p>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </section>

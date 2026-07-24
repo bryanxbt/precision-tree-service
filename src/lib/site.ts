@@ -256,36 +256,42 @@ export const faqs = [
   },
 ] as const;
 
+/** Hero background (home page) */
+export const heroImage = {
+  src: "/hero/tree-removal-hero.jpg",
+  alt: "Professional tree removal crew at work",
+} as const;
+
 export const galleryItems = [
   {
     title: "Large oak removal",
     category: "Tree Removal",
     caption: "Full takedown and cleanup on a residential lot",
+    src: "/gallery/large-oak-removal.jpg",
   },
   {
     title: "Canopy lift & thin",
     category: "Trimming",
     caption: "Improved light and clearance over the driveway",
+    src: "/gallery/canopy-lift-thin.jpg",
   },
   {
     title: "Storm cleanup",
     category: "Emergency",
     caption: "Fast response after a windstorm",
-  },
-  {
-    title: "Stump grind & finish",
-    category: "Stump Grinding",
-    caption: "Yard ready for new grass and landscaping",
+    src: "/gallery/storm-cleanup.jpg",
   },
   {
     title: "Backyard access job",
     category: "Tree Removal",
     caption: "Tight-space removal without property damage",
+    src: "/gallery/backyard-access.jpg",
   },
   {
     title: "Lot prep for build",
     category: "Lot Clearing",
     caption: "Selective clearing for a new home site",
+    src: "/gallery/lot-prep.jpg",
   },
 ] as const;
 

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { CTABanner } from "@/components/CTABanner";
 import { galleryItems, site } from "@/lib/site";
 
@@ -6,15 +7,6 @@ export const metadata: Metadata = {
   title: "Gallery",
   description: `Recent tree work and project examples from ${site.name}.`,
 };
-
-const gradients = [
-  "from-emerald-900 to-green-700",
-  "from-lime-900 to-emerald-700",
-  "from-stone-800 to-emerald-900",
-  "from-teal-900 to-green-800",
-  "from-green-950 to-lime-800",
-  "from-emerald-950 to-stone-700",
-];
 
 export default function GalleryPage() {
   return (
@@ -28,27 +20,29 @@ export default function GalleryPage() {
             Work that speaks for itself
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-stone-600">
-            Placeholder project cards for now. Swap these for real before/after
-            photos as you complete jobs — drop images in{" "}
-            <code className="rounded bg-stone-100 px-1.5 py-0.5 text-sm">
-              public/gallery
-            </code>{" "}
-            when you&apos;re ready.
+            A look at the kind of tree removal, trimming, storm cleanup, and lot
+            work we do. Add your own job photos here as you complete more
+            projects.
           </p>
         </div>
       </section>
 
       <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {galleryItems.map((item, i) => (
+          {galleryItems.map((item) => (
             <article
               key={item.title}
               className="overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-sm"
             >
-              <div
-                className={`flex aspect-[4/3] items-end bg-gradient-to-br ${gradients[i % gradients.length]} p-5 text-white`}
-              >
-                <span className="rounded-full bg-black/25 px-3 py-1 text-xs font-semibold uppercase tracking-wide backdrop-blur">
+              <div className="relative aspect-[4/3] overflow-hidden bg-stone-100">
+                <Image
+                  src={item.src}
+                  alt={`${item.title} — ${item.caption}`}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover"
+                />
+                <span className="absolute bottom-3 left-3 rounded-full bg-black/50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white backdrop-blur">
                   {item.category}
                 </span>
               </div>
@@ -63,7 +57,7 @@ export default function GalleryPage() {
 
       <CTABanner
         title="Want results like these on your property?"
-        subtitle="Send a few photos with your quote request and we’ll give you a clear plan."
+        subtitle="Send a few photos with your quote request and we will give you a clear plan."
       />
     </>
   );
