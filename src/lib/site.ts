@@ -1,11 +1,11 @@
 import { withBasePath } from "@/lib/paths";
 
 /**
- * Business content for Precision Tree Service.
+ * Business content for Precision Tree Services.
  * Update phone, email, cities, social links, and reviews as you go.
  */
 export const site = {
-  name: "Precision Tree Service",
+  name: "Precision Tree Services",
   tagline: "Tree services from a local crew you can rely on",
   description:
     "Tree removal, trimming, stump grinding, and storm cleanup — done carefully, priced fairly, and finished clean. A small local crew homeowners can count on.",

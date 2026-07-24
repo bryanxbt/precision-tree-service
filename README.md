@@ -1,6 +1,6 @@
-# Precision Tree Service
+# Precision Tree Services
 
-Marketing website for **Precision Tree Service** — a local tree care business.
+Marketing website for **Precision Tree Services** — a local tree care business.
 
 ## Stack
 
