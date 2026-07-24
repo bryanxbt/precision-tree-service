@@ -1,22 +1,48 @@
+/**
+ * Business content for Precision Tree Service.
+ * Update phone, email, cities, social links, and reviews as you go.
+ */
 export const site = {
   name: "Precision Tree Service",
   tagline: "Tree services from a local crew you can rely on",
   description:
     "Tree removal, trimming, stump grinding, and storm cleanup — done carefully, priced fairly, and finished clean. A small local crew homeowners can count on.",
-  // Update these when you have real details
+  /** Public site URL (GitHub Pages preview for now) */
+  url: "https://bryanxbt.github.io/precision-tree-service",
+  // --- Update these with real business details ---
   phone: "(555) 123-4567",
   phoneHref: "tel:+15551234567",
   email: "hello@precisiontreeservice.com",
   emailHref: "mailto:hello@precisiontreeservice.com",
   serviceArea: "Your city & surrounding areas",
   hours: "Mon–Sat 7am–6pm · Emergency 24/7",
+  hoursDetailed: [
+    { day: "Monday", time: "7:00am – 6:00pm" },
+    { day: "Tuesday", time: "7:00am – 6:00pm" },
+    { day: "Wednesday", time: "7:00am – 6:00pm" },
+    { day: "Thursday", time: "7:00am – 6:00pm" },
+    { day: "Friday", time: "7:00am – 6:00pm" },
+    { day: "Saturday", time: "8:00am – 4:00pm" },
+    { day: "Sunday", time: "Emergency only" },
+  ],
+  social: {
+    facebook: "", // e.g. https://facebook.com/yourpage
+    instagram: "", // e.g. https://instagram.com/yourhandle
+    google: "", // Google Business Profile link
+  },
+  /** Set true when insured (and licensed, if applicable in your area) */
+  insured: true,
+  bonded: false,
+  freeEstimates: true,
 } as const;
 
 export const navLinks = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
-  { href: "/about", label: "About" },
+  { href: "/service-areas", label: "Service Areas" },
   { href: "/gallery", label: "Gallery" },
+  { href: "/about", label: "About" },
+  { href: "/faq", label: "FAQ" },
   { href: "/contact", label: "Contact" },
 ] as const;
 
@@ -26,6 +52,8 @@ export const services = [
     title: "Tree Removal",
     short:
       "Safe removal of hazardous, dead, or unwanted trees — including tight-access jobs.",
+    seo:
+      "Professional tree removal for hazardous, dead, or unwanted trees. Careful work near homes and full cleanup included.",
     details: [
       "Hazardous and storm-damaged trees",
       "Close-quarter and residential removals",
@@ -38,11 +66,12 @@ export const services = [
     title: "Tree Trimming & Pruning",
     short:
       "Shape, thin, and strengthen trees for health, curb appeal, and safety.",
+    seo: "Tree trimming and pruning to improve safety, light, and curb appeal around your home.",
     details: [
       "Crown cleaning and deadwood removal",
       "Clearance for roofs, power lines, and driveways",
-      "Seasonal maintenance plans",
-      "Fruit tree and ornamental care",
+      "Seasonal maintenance",
+      "Ornamental and shade tree care",
     ],
   },
   {
@@ -50,6 +79,7 @@ export const services = [
     title: "Stump Grinding",
     short:
       "Grind stumps below grade so you can reclaim your yard and plant again.",
+    seo: "Stump grinding below grade so you can reclaim yard space for grass, landscaping, or new plantings.",
     details: [
       "Stumps of all sizes",
       "Grind below ground level",
@@ -62,8 +92,9 @@ export const services = [
     title: "Storm & Emergency",
     short:
       "Fast response when trees come down — day or night after severe weather.",
+    seo: "Emergency tree removal and storm cleanup when fallen trees block access or threaten property.",
     details: [
-      "24/7 emergency call-outs",
+      "Emergency call-outs",
       "Fallen tree and limb removal",
       "Property access restoration",
       "Insurance-friendly documentation",
@@ -74,6 +105,7 @@ export const services = [
     title: "Lot Clearing",
     short:
       "Clear brush and trees for building sites, views, and property improvement.",
+    seo: "Lot clearing for building sites, views, and property improvement with debris disposal.",
     details: [
       "Selective or full clearing",
       "Brush and undergrowth removal",
@@ -82,16 +114,145 @@ export const services = [
     ],
   },
   {
+    slug: "residential",
+    title: "Residential Tree Service",
+    short:
+      "Homeowner-focused tree work with clear communication and careful cleanup.",
+    seo: "Residential tree services for homeowners who want safe work and a clean finish.",
+    details: [
+      "Single-tree or full-property jobs",
+      "Yard and landscape protection",
+      "Clear communication before we start",
+      "Haul-away available",
+    ],
+  },
+  {
+    slug: "commercial",
+    title: "Commercial Tree Service",
+    short:
+      "Reliable work for businesses, HOAs, churches, and multi-unit properties.",
+    seo: "Commercial tree care for businesses, HOAs, and multi-unit properties on a dependable schedule.",
+    details: [
+      "HOAs and multi-unit properties",
+      "Storefronts and parking lots",
+      "Scheduled maintenance options",
+      "Safety-minded crews",
+    ],
+  },
+  {
     slug: "consultations",
     title: "Consultations & Estimates",
     short:
-      "Honest assessments of tree health, risk, and the right next step for your property.",
+      "On-site walkthroughs with honest recommendations and free written estimates.",
+    seo: "Free on-site estimates and clear recommendations for your tree project.",
     details: [
       "On-site walkthroughs",
-      "Risk and health evaluation",
+      "Straight-talk recommendations",
       "Written free estimates",
-      "No-pressure recommendations",
+      "No-pressure pricing",
     ],
+  },
+] as const;
+
+/** Cities/areas you serve — update names for local SEO */
+export const serviceAreas = [
+  { slug: "your-city", name: "Your City", blurb: "Primary service area for residential and light commercial tree work." },
+  { slug: "north-suburbs", name: "North Suburbs", blurb: "Trimming, removals, and storm response for nearby neighborhoods." },
+  { slug: "south-suburbs", name: "South Suburbs", blurb: "Full-service tree care including stump grinding and lot clearing." },
+  { slug: "east-side", name: "East Side", blurb: "Local crew for hazardous trees, roof clearance, and cleanup." },
+  { slug: "west-side", name: "West Side", blurb: "Dependable tree removal and maintenance for homes and businesses." },
+  { slug: "surrounding-areas", name: "Surrounding Areas", blurb: "Call us — if you are nearby we can often schedule a visit." },
+] as const;
+
+export const processSteps = [
+  {
+    step: "01",
+    title: "Contact us",
+    description:
+      "Call, text, or send a free quote request with a few details (and photos if you have them).",
+  },
+  {
+    step: "02",
+    title: "Schedule your estimate",
+    description:
+      "We visit the property, walk the job with you, and give a clear, free written estimate.",
+  },
+  {
+    step: "03",
+    title: "Get the job done",
+    description:
+      "We show up prepared, work safely, and leave your property clean when we are finished.",
+  },
+] as const;
+
+/**
+ * Replace with real Google / Facebook reviews as you earn them.
+ * Do not publish fake reviews on a live marketing site long-term.
+ */
+export const testimonials = [
+  {
+    quote:
+      "They explained the job clearly, showed up when they said they would, and left the yard cleaner than we expected.",
+    name: "Local homeowner",
+    detail: "Tree removal",
+    placeholder: true,
+  },
+  {
+    quote:
+      "Fair price, careful around the house and fence, and great communication the whole way.",
+    name: "Local homeowner",
+    detail: "Trimming & cleanup",
+    placeholder: true,
+  },
+  {
+    quote:
+      "Storm took a limb down overnight. They responded quickly and got our driveway open again.",
+    name: "Local homeowner",
+    detail: "Emergency work",
+    placeholder: true,
+  },
+] as const;
+
+export const faqs = [
+  {
+    question: "What areas do you service?",
+    answer:
+      `We serve ${site.serviceArea}. If you are nearby and do not see your town listed, still reach out — we often can help.`,
+  },
+  {
+    question: "Are you insured?",
+    answer:
+      "Yes — we carry insurance to protect your property and our crew on every job. Ask us for proof of insurance anytime.",
+  },
+  {
+    question: "Do you offer free estimates?",
+    answer:
+      "Yes. Most residential jobs get a free on-site estimate. Emergency or after-hours situations may be handled by phone first so we can respond faster.",
+  },
+  {
+    question: "Do you handle emergency or storm work?",
+    answer:
+      "Yes. Fallen trees, blocked driveways, and storm damage are a priority. Call us and we will do our best to get there quickly.",
+  },
+  {
+    question: "Do you haul away debris?",
+    answer:
+      "Cleanup and haul-away are available on nearly every job. We will confirm what is included in your estimate before we start.",
+  },
+  {
+    question: "Are you certified arborists?",
+    answer:
+      "We are a professional tree service crew focused on safe removals, trimming, stumps, and cleanup. We are not certified arborists. If your situation needs an ISA-certified arborist assessment, we will tell you honestly and help you point in the right direction.",
+  },
+  {
+    question: "How soon can you start?",
+    answer:
+      "Timing depends on the season and weather. Many jobs can be scheduled within days; storm work is prioritized. We will give you a realistic window when we quote the job.",
+  },
+  {
+    question: "Do you work with insurance claims?",
+    answer:
+      "We can document storm damage and provide estimates that help with insurance claims. Your carrier’s process varies — we will work with you either way.",
   },
 ] as const;
 
@@ -109,7 +270,7 @@ export const galleryItems = [
   {
     title: "Storm cleanup",
     category: "Emergency",
-    caption: "Overnight response after a windstorm",
+    caption: "Fast response after a windstorm",
   },
   {
     title: "Stump grind & finish",
@@ -142,11 +303,20 @@ export const values = [
   {
     title: "Straight answers",
     description:
-      "Clear pricing, honest recommendations, and no upsells you don’t need.",
+      "Clear pricing, honest recommendations, and no upsells you do not need.",
   },
   {
     title: "Local & accountable",
     description:
       "A small team building a reputation in our community — one job at a time.",
   },
+] as const;
+
+export const trustPoints = [
+  "Free written estimates",
+  "Insured crew",
+  "Cleanup available",
+  "Residential & commercial",
+  "Storm response",
+  "Local & accountable",
 ] as const;

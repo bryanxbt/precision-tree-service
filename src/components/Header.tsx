@@ -26,7 +26,7 @@ export function Header() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-1 md:flex">
+        <nav className="hidden items-center gap-0.5 lg:flex">
           {navLinks.map((link) => {
             const active =
               link.href === "/"
@@ -36,7 +36,7 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
+                className={`rounded-lg px-2.5 py-2 text-sm font-medium transition-colors xl:px-3 ${
                   active
                     ? "bg-emerald-50 text-emerald-900"
                     : "text-stone-600 hover:bg-stone-50 hover:text-emerald-900"
@@ -63,7 +63,7 @@ export function Header() {
           </Link>
           <button
             type="button"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-stone-200 text-stone-700 md:hidden"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-stone-200 text-stone-700 lg:hidden"
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
@@ -82,7 +82,7 @@ export function Header() {
       </div>
 
       {open && (
-        <nav className="border-t border-stone-100 bg-white px-4 py-3 md:hidden">
+        <nav className="border-t border-stone-100 bg-white px-4 py-3 lg:hidden">
           <div className="flex flex-col gap-1">
             {navLinks.map((link) => (
               <Link
