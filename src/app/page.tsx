@@ -204,7 +204,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Gallery teaser */}
+      {/* See the work — full photo set from gallery */}
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
         <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
           <div>
@@ -214,27 +214,31 @@ export default function HomePage() {
             <h2 className="mt-2 text-3xl font-bold tracking-tight text-stone-900">
               See the work
             </h2>
+            <p className="mt-2 max-w-xl text-stone-600">
+              Removal, trimming, storm cleanup, stump grinding, and lot work —
+              real job photos from the field.
+            </p>
           </div>
           <Link
             href="/gallery"
             className="text-sm font-semibold text-emerald-800 hover:text-emerald-700"
           >
-            Full gallery →
+            View gallery page →
           </Link>
         </div>
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {galleryItems.slice(0, 3).map((item) => (
+          {galleryItems.map((item) => (
             <Link
               key={item.title}
               href="/gallery"
               className="group overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-sm transition hover:shadow-md"
             >
-              <div className="relative aspect-[4/3] overflow-hidden">
+              <div className="relative aspect-[4/3] overflow-hidden bg-stone-100">
                 <Image
                   src={item.src}
-                  alt={item.title}
+                  alt={`${item.title} — ${item.caption}`}
                   fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="object-cover transition duration-300 group-hover:scale-105"
                 />
                 <span className="absolute bottom-3 left-3 rounded-full bg-black/50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white backdrop-blur">
