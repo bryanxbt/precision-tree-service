@@ -63,7 +63,7 @@ export function Footer() {
           <p>
             © {new Date().getFullYear()} {site.name}. All rights reserved.
           </p>
-          <p>Licensed & insured · Update details in site config</p>
+          <p>Insured · Local crew · Free estimates</p>
         </div>
       </div>
     </footer>
