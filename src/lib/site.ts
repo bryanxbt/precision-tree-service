@@ -284,6 +284,12 @@ export const galleryItems = [
     src: withBasePath("/gallery/storm-cleanup.jpg"),
   },
   {
+    title: "Stump grind & finish",
+    category: "Stump Grinding",
+    caption: "Yard ready for new grass and landscaping",
+    src: withBasePath("/gallery/stump-grinding.jpg"),
+  },
+  {
     title: "Backyard access job",
     category: "Tree Removal",
     caption: "Tight-space removal without property damage",
