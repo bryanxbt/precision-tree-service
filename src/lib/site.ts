@@ -1,11 +1,11 @@
 import { withBasePath } from "@/lib/paths";
 
 /**
- * Business content for QB Tree Service (Quintin + Bryan).
+ * Business content for QB Tree Services (Quintin + Bryan).
  * Update phone, email, cities, social links, and reviews as you go.
  */
 export const site = {
-  name: "QB Tree Service",
+  name: "QB Tree Services",
   shortName: "QB",
   partners: "Quintin & Bryan",
   tagline: "Local tree work from a crew you can count on",
@@ -16,8 +16,8 @@ export const site = {
   // --- Update these with real business details ---
   phone: "(765) 867-1823",
   phoneHref: "tel:+17658671823",
-  email: "hello@qbtreeservice.com",
-  emailHref: "mailto:hello@qbtreeservice.com",
+  email: "hello@qbtreeservices.com",
+  emailHref: "mailto:hello@qbtreeservices.com",
   serviceArea: "North Indy & surrounding areas",
   hours: "Mon–Sat 7am–6pm · Emergency 24/7",
   hoursDetailed: [
@@ -45,8 +45,8 @@ export const site = {
     /** Header / favicon use the same master art for now */
     mark: withBasePath("/brand/logo-mark.png"),
     wordmark: withBasePath("/brand/logo-wordmark.png"),
-    markAlt: "QB Tree Service logo",
-    wordmarkAlt: "QB Tree Service",
+    markAlt: "QB Tree Services logo",
+    wordmarkAlt: "QB Tree Services",
   },
 } as const;
 
@@ -129,7 +129,7 @@ export const services = [
   },
   {
     slug: "residential",
-    title: "Residential Tree Service",
+    title: "Residential Tree Services",
     short:
       "Homeowner-focused tree work with clear communication and careful cleanup.",
     seo: "Residential tree services for homeowners who want safe work and a clean finish.",
@@ -142,7 +142,7 @@ export const services = [
   },
   {
     slug: "commercial",
-    title: "Commercial Tree Service",
+    title: "Commercial Tree Services",
     short:
       "Reliable work for businesses, HOAs, churches, and multi-unit properties.",
     seo: "Commercial tree care for businesses, HOAs, and multi-unit properties on a dependable schedule.",
@@ -315,7 +315,7 @@ export const faqs = [
 /** Hero background (home page) — paths include basePath for GitHub Pages */
 export const heroImage = {
   src: withBasePath("/hero/tree-removal-hero.jpg"),
-  alt: "QB Tree Service crew working a large residential tree at sunset",
+  alt: "QB Tree Services crew working a large residential tree at sunset",
 } as const;
 
 export const galleryItems = [

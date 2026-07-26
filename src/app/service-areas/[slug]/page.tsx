@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const area = serviceAreas.find((a) => a.slug === slug);
   if (!area) return {};
   return {
-    title: `Tree Service in ${area.name}`,
+    title: `Tree Services in ${area.name}`,
     description: `Professional tree removal, trimming, stump grinding, and storm cleanup in ${area.name}. ${site.name} — free estimates.`,
   };
 }

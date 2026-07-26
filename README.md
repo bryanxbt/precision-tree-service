@@ -1,6 +1,6 @@
-# QB Tree Service
+# QB Tree Services
 
-Marketing website for **QB Tree Service** (Quintin & Bryan) — local tree care in North Indy and surrounding areas.
+Marketing website for **QB Tree Services** (Quintin & Bryan) — local tree care in North Indy and surrounding areas.
 
 **Brand colors:** bright red, white, and blue.
 
@@ -16,7 +16,7 @@ https://bryanxbt.github.io/precision-tree-service/
 
 Every push to `main` rebuilds and updates that link (GitHub Actions).
 
-> Repo folder is still named `precision-tree-service` for GitHub Pages `basePath` compatibility. The public brand is **QB Tree Service**.
+> Repo folder is still named `precision-tree-service` for GitHub Pages `basePath` compatibility. The public brand is **QB Tree Services**.
 
 ## Getting started
 
