@@ -12,16 +12,16 @@ export default function AboutPage() {
     <>
       <section className="border-b border-stone-200 bg-white">
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-16">
-          <p className="text-sm font-semibold uppercase tracking-wider text-emerald-800">
+          <p className="text-sm font-semibold uppercase tracking-wider text-blue-800">
             About us
           </p>
           <h1 className="mt-2 max-w-2xl text-4xl font-bold tracking-tight text-stone-900">
-            Friends building a tree service the right way
+            Quintin &amp; Bryan — building a tree service the right way
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-stone-600">
-            {site.name} started with a simple idea: homeowners deserve skilled
-            tree work without the runaround. We’re a small team focused on
-            safety, communication, and finishing strong.
+            {site.name} is {site.partners}. We started with a simple idea:
+            homeowners deserve skilled tree work without the runaround. We’re a
+            small crew focused on safety, communication, and finishing strong.
           </p>
         </div>
       </section>
@@ -29,7 +29,7 @@ export default function AboutPage() {
       <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
         <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
           <div className="tree-pattern min-h-[320px] rounded-3xl p-8 text-white shadow-lg">
-            <p className="text-sm font-semibold uppercase tracking-wider text-amber-300">
+            <p className="text-sm font-semibold uppercase tracking-wider text-red-400">
               Our promise
             </p>
             <p className="mt-4 text-2xl font-bold leading-snug sm:text-3xl">
@@ -44,9 +44,10 @@ export default function AboutPage() {
               explain options, protect your property, and price jobs fairly.
             </p>
             <p>
-              Update this page with your real story, bios, certifications, and
-              photos as you grow. For now, this is a solid foundation you can
-              share with early customers.
+              The name says who we are: <strong>Q</strong>uintin and{" "}
+              <strong>B</strong>ryan — two partners you can call directly, not a
+              call center. Add full bios and job photos here as the business
+              grows.
             </p>
             <ul className="space-y-2 pt-2 text-sm font-medium text-stone-800">
               <li>• Safety-focused crew practices</li>

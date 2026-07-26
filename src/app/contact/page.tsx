@@ -12,7 +12,7 @@ export default function ContactPage() {
     <>
       <section className="border-b border-stone-200 bg-white">
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-16">
-          <p className="text-sm font-semibold uppercase tracking-wider text-emerald-800">
+          <p className="text-sm font-semibold uppercase tracking-wider text-blue-800">
             Contact
           </p>
           <h1 className="mt-2 max-w-2xl text-4xl font-bold tracking-tight text-stone-900">
@@ -23,7 +23,7 @@ export default function ContactPage() {
             damage, call{" "}
             <a
               href={site.phoneHref}
-              className="font-semibold text-emerald-800 hover:underline"
+              className="font-semibold text-blue-800 hover:underline"
             >
               {site.phone}
             </a>
@@ -47,7 +47,7 @@ export default function ContactPage() {
                   <dd className="mt-0.5">
                     <a
                       href={site.phoneHref}
-                      className="font-semibold text-emerald-900 hover:underline"
+                      className="font-semibold text-blue-900 hover:underline"
                     >
                       {site.phone}
                     </a>
@@ -58,7 +58,7 @@ export default function ContactPage() {
                   <dd className="mt-0.5">
                     <a
                       href={site.emailHref}
-                      className="font-semibold text-emerald-900 hover:underline"
+                      className="font-semibold text-blue-900 hover:underline"
                     >
                       {site.email}
                     </a>
@@ -75,9 +75,9 @@ export default function ContactPage() {
               </dl>
             </div>
 
-            <div className="rounded-2xl bg-emerald-950 p-6 text-emerald-50">
+            <div className="rounded-2xl bg-blue-950 p-6 text-blue-50">
               <h2 className="text-lg font-semibold">What happens next?</h2>
-              <ol className="mt-4 list-decimal space-y-2 pl-5 text-sm text-emerald-100/90">
+              <ol className="mt-4 list-decimal space-y-2 pl-5 text-sm text-blue-100/90">
                 <li>We review your request (and any details you send).</li>
                 <li>We follow up to confirm timing and scope.</li>
                 <li>You get a clear, free estimate — no pressure.</li>

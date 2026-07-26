@@ -11,7 +11,7 @@ export function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-emerald-950/10 bg-white/90 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-blue-950/10 bg-white/90 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-2.5 sm:px-6">
         <Link href="/" className="group flex min-w-0 items-center gap-2.5">
           <Image
@@ -23,10 +23,10 @@ export function Header() {
             priority
           />
           <span className="min-w-0 leading-tight">
-            <span className="block truncate text-sm font-bold tracking-tight text-emerald-950 sm:text-base">
+            <span className="block truncate text-sm font-bold tracking-tight text-blue-950 sm:text-base">
               {site.name}
             </span>
-            <span className="hidden text-xs text-emerald-800/70 sm:block">
+            <span className="hidden text-xs text-blue-800/70 sm:block">
               {site.serviceArea}
             </span>
           </span>
@@ -44,8 +44,8 @@ export function Header() {
                 href={link.href}
                 className={`rounded-lg px-2.5 py-2 text-sm font-medium transition-colors xl:px-3 ${
                   active
-                    ? "bg-emerald-50 text-emerald-900"
-                    : "text-stone-600 hover:bg-stone-50 hover:text-emerald-900"
+                    ? "bg-blue-50 text-blue-900"
+                    : "text-stone-600 hover:bg-stone-50 hover:text-blue-900"
                 }`}
               >
                 {link.label}
@@ -57,13 +57,13 @@ export function Header() {
         <div className="flex items-center gap-2">
           <a
             href={site.phoneHref}
-            className="hidden text-sm font-semibold text-emerald-900 sm:inline lg:mr-1"
+            className="hidden text-sm font-semibold text-blue-900 sm:inline lg:mr-1"
           >
             {site.phone}
           </a>
           <Link
             href="/contact"
-            className="rounded-full bg-emerald-800 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-700"
+            className="rounded-full bg-blue-800 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-700"
           >
             Free Quote
           </Link>
@@ -95,14 +95,14 @@ export function Header() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="rounded-lg px-3 py-2.5 text-sm font-medium text-stone-700 hover:bg-emerald-50 hover:text-emerald-900"
+                className="rounded-lg px-3 py-2.5 text-sm font-medium text-stone-700 hover:bg-blue-50 hover:text-blue-900"
               >
                 {link.label}
               </Link>
             ))}
             <a
               href={site.phoneHref}
-              className="rounded-lg px-3 py-2.5 text-sm font-semibold text-emerald-900"
+              className="rounded-lg px-3 py-2.5 text-sm font-semibold text-blue-900"
             >
               Call {site.phone}
             </a>

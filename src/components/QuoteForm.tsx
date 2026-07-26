@@ -37,12 +37,12 @@ export function QuoteForm({
         className={`rounded-2xl p-6 text-center sm:p-8 ${
           onDark
             ? "border border-white/20 bg-white/10 text-white"
-            : "border border-emerald-200 bg-emerald-50 text-emerald-900"
+            : "border border-blue-200 bg-blue-50 text-blue-900"
         } ${className}`}
       >
         <p className="text-lg font-semibold">Thanks — we got your request.</p>
         <p
-          className={`mt-2 text-sm ${onDark ? "text-emerald-50/85" : "text-emerald-800/80"}`}
+          className={`mt-2 text-sm ${onDark ? "text-blue-50/85" : "text-blue-800/80"}`}
         >
           We will follow up soon. For urgent storm work, call us directly.
         </p>
@@ -50,7 +50,7 @@ export function QuoteForm({
           type="button"
           onClick={() => setStatus("idle")}
           className={`mt-6 text-sm font-semibold underline-offset-2 hover:underline ${
-            onDark ? "text-amber-300" : "text-emerald-800"
+            onDark ? "text-red-400" : "text-blue-800"
           }`}
         >
           Send another message
@@ -62,7 +62,7 @@ export function QuoteForm({
   if (variant === "compact" || variant === "hero") {
     const isHero = variant === "hero";
     const input =
-      "w-full rounded-xl border border-stone-300 bg-white px-3 py-2 text-sm text-stone-900 outline-none ring-emerald-700/30 focus:border-emerald-700 focus:ring-2 sm:py-2.5";
+      "w-full rounded-xl border border-stone-300 bg-white px-3 py-2 text-sm text-stone-900 outline-none ring-blue-700/30 focus:border-blue-700 focus:ring-2 sm:py-2.5";
     return (
       <form
         onSubmit={onSubmit}
@@ -79,7 +79,7 @@ export function QuoteForm({
               No pressure. Prefer to talk?{" "}
               <a
                 href={site.phoneHref}
-                className="font-semibold text-emerald-900 hover:underline"
+                className="font-semibold text-blue-900 hover:underline"
               >
                 Call {site.phone}
               </a>
@@ -130,7 +130,7 @@ export function QuoteForm({
             <button
               type="submit"
               disabled={status === "sending"}
-              className="w-full rounded-full bg-amber-500 px-4 py-2.5 text-sm font-bold text-emerald-950 shadow-sm transition hover:bg-amber-400 disabled:opacity-70 lg:col-span-1"
+              className="w-full rounded-full bg-red-600 px-4 py-2.5 text-sm font-bold text-blue-950 shadow-sm transition hover:bg-red-500 disabled:opacity-70 lg:col-span-1"
             >
               {status === "sending" ? "Sending…" : "Send request"}
             </button>
@@ -151,7 +151,7 @@ export function QuoteForm({
           <button
             type="submit"
             disabled={status === "sending"}
-            className="w-full rounded-full bg-amber-500 px-6 py-3 text-sm font-bold text-emerald-950 shadow-sm transition hover:bg-amber-400 disabled:opacity-70"
+            className="w-full rounded-full bg-red-600 px-6 py-3 text-sm font-bold text-blue-950 shadow-sm transition hover:bg-red-500 disabled:opacity-70"
           >
             {status === "sending" ? "Sending…" : "Send free quote request"}
           </button>
@@ -162,7 +162,7 @@ export function QuoteForm({
 
   const labelCls = "mb-1.5 block text-sm font-medium text-stone-700";
   const fieldCls =
-    "w-full rounded-xl border border-stone-300 px-3 py-2.5 text-sm text-stone-900 outline-none ring-emerald-700/30 focus:border-emerald-700 focus:ring-2";
+    "w-full rounded-xl border border-stone-300 px-3 py-2.5 text-sm text-stone-900 outline-none ring-blue-700/30 focus:border-blue-700 focus:ring-2";
 
   return (
     <form
@@ -268,7 +268,7 @@ export function QuoteForm({
       <button
         type="submit"
         disabled={status === "sending"}
-        className="w-full rounded-full bg-emerald-800 px-6 py-3 text-sm font-bold text-white shadow-sm transition hover:bg-emerald-700 disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
+        className="w-full rounded-full bg-blue-800 px-6 py-3 text-sm font-bold text-white shadow-sm transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
       >
         {status === "sending" ? "Sending…" : "Request free quote"}
       </button>

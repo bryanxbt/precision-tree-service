@@ -1,12 +1,14 @@
 import { withBasePath } from "@/lib/paths";
 
 /**
- * Business content for Precision Tree Services.
+ * Business content for QB Tree Service (Quintin + Bryan).
  * Update phone, email, cities, social links, and reviews as you go.
  */
 export const site = {
-  name: "Precision Tree Services",
-  tagline: "Tree services from a local crew you can rely on",
+  name: "QB Tree Service",
+  shortName: "QB",
+  partners: "Quintin & Bryan",
+  tagline: "Local tree work from a crew you can count on",
   description:
     "Tree removal, trimming, stump grinding, and storm cleanup — done carefully, priced fairly, and finished clean. A small local crew homeowners can count on.",
   /** Public site URL (GitHub Pages preview for now) */
@@ -14,8 +16,8 @@ export const site = {
   // --- Update these with real business details ---
   phone: "(765) 867-1823",
   phoneHref: "tel:+17658671823",
-  email: "hello@precisiontreeservice.com",
-  emailHref: "mailto:hello@precisiontreeservice.com",
+  email: "hello@qbtreeservice.com",
+  emailHref: "mailto:hello@qbtreeservice.com",
   serviceArea: "North Indy & surrounding areas",
   hours: "Mon–Sat 7am–6pm · Emergency 24/7",
   hoursDetailed: [
@@ -40,8 +42,8 @@ export const site = {
   logo: {
     mark: withBasePath("/brand/logo-mark.png"),
     wordmark: withBasePath("/brand/logo-wordmark.png"),
-    markAlt: "Precision Tree Services logo",
-    wordmarkAlt: "Precision Tree Services",
+    markAlt: "QB Tree Service logo",
+    wordmarkAlt: "QB Tree Service",
   },
 } as const;
 
@@ -371,7 +373,7 @@ export const values = [
   {
     title: "Local & accountable",
     description:
-      "A small team building a reputation in our community — one job at a time.",
+      "Quintin and Bryan — a small team building a reputation in our community, one job at a time.",
   },
 ] as const;
 

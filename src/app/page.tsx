@@ -33,34 +33,34 @@ export default function HomePage() {
           sizes="100vw"
           className="object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-emerald-950/95 via-emerald-950/88 to-emerald-900/65" />
-        <div className="absolute inset-0 bg-gradient-to-b from-emerald-950/35 via-transparent to-emerald-950/80" />
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-950/95 via-blue-950/88 to-blue-900/65" />
+        <div className="absolute inset-0 bg-gradient-to-b from-blue-950/35 via-transparent to-blue-950/80" />
 
         <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-1 flex-col px-4 py-4 sm:px-6 sm:py-5 lg:py-6">
           {/* Top half — message + word logo */}
           <div className="grid min-h-0 flex-1 grid-cols-1 items-center gap-4 lg:grid-cols-2 lg:gap-10">
             <div className="min-w-0">
-              <p className="inline-flex items-center rounded-full border border-white/20 bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-emerald-100 backdrop-blur sm:text-xs">
+              <p className="inline-flex items-center rounded-full border border-white/20 bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-blue-100 backdrop-blur sm:text-xs">
                 {site.serviceArea} · Free estimates
               </p>
               <h1 className="mt-3 text-3xl font-bold tracking-tight sm:mt-4 sm:text-4xl lg:text-[2.65rem] lg:leading-[1.12] xl:text-5xl">
-                Tree services from a local crew you can rely on
+                {site.tagline}
               </h1>
-              <p className="mt-3 max-w-lg text-sm leading-relaxed text-emerald-50/90 sm:mt-4 sm:text-base lg:text-lg">
+              <p className="mt-3 max-w-lg text-sm leading-relaxed text-blue-50/90 sm:mt-4 sm:text-base lg:text-lg">
                 {site.description}
               </p>
               <ul className="mt-3 hidden gap-x-4 gap-y-1.5 sm:mt-4 sm:grid sm:grid-cols-2">
                 {trustPoints.slice(0, 4).map((item) => (
                   <li
                     key={item}
-                    className="flex gap-2 text-xs text-emerald-50/95 sm:text-sm"
+                    className="flex gap-2 text-xs text-blue-50/95 sm:text-sm"
                   >
-                    <span className="font-bold text-amber-400">✓</span>
+                    <span className="font-bold text-red-500">✓</span>
                     {item}
                   </li>
                 ))}
               </ul>
-              <p className="mt-3 text-xs text-emerald-100/85 sm:mt-4 sm:text-sm">
+              <p className="mt-3 text-xs text-blue-100/85 sm:mt-4 sm:text-sm">
                 Prefer to talk? Call{" "}
                 <a href={site.phoneHref} className="font-semibold text-white">
                   {site.phone}
@@ -97,7 +97,7 @@ export default function HomePage() {
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-8 gap-y-3 px-4 py-4 text-center text-sm font-medium text-stone-600 sm:px-6">
           {trustPoints.map((t) => (
             <span key={t} className="inline-flex items-center gap-1.5">
-              <span className="text-emerald-700">●</span>
+              <span className="text-blue-700">●</span>
               {t}
             </span>
           ))}
@@ -108,7 +108,7 @@ export default function HomePage() {
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
         <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-wider text-emerald-800">
+            <p className="text-sm font-semibold uppercase tracking-wider text-blue-800">
               Tree services
             </p>
             <h2 className="mt-2 text-3xl font-bold tracking-tight text-stone-900">
@@ -121,7 +121,7 @@ export default function HomePage() {
           </div>
           <Link
             href="/services"
-            className="text-sm font-semibold text-emerald-800 hover:text-emerald-700"
+            className="text-sm font-semibold text-blue-800 hover:text-blue-700"
           >
             All services →
           </Link>
@@ -132,14 +132,14 @@ export default function HomePage() {
             <Link
               key={service.slug}
               href={`/services/${service.slug}/`}
-              className="group rounded-2xl border border-stone-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-emerald-300 hover:shadow-md"
+              className="group rounded-2xl border border-stone-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-blue-300 hover:shadow-md"
             >
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-100 text-emerald-900">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-100 text-blue-900">
                 <span className="text-lg" aria-hidden>
                   🌲
                 </span>
               </div>
-              <h3 className="mt-3 text-base font-semibold text-stone-900 group-hover:text-emerald-900">
+              <h3 className="mt-3 text-base font-semibold text-stone-900 group-hover:text-blue-900">
                 {service.title}
               </h3>
               <p className="mt-1.5 text-sm leading-relaxed text-stone-600">
@@ -157,7 +157,7 @@ export default function HomePage() {
         <div className="grid items-center gap-10 lg:grid-cols-2">
           <div className="tree-pattern flex min-h-[280px] items-end rounded-3xl p-8 text-white shadow-lg">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-wider text-amber-300">
+              <p className="text-sm font-semibold uppercase tracking-wider text-red-400">
                 About us
               </p>
               <p className="mt-2 text-2xl font-bold leading-snug">
@@ -185,7 +185,7 @@ export default function HomePage() {
             </div>
             <Link
               href="/about"
-              className="mt-6 inline-flex text-sm font-semibold text-emerald-800 hover:text-emerald-700"
+              className="mt-6 inline-flex text-sm font-semibold text-blue-800 hover:text-blue-700"
             >
               More about us →
             </Link>
@@ -198,7 +198,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
           <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-wider text-emerald-800">
+              <p className="text-sm font-semibold uppercase tracking-wider text-blue-800">
                 Service areas
               </p>
               <h2 className="mt-2 text-3xl font-bold tracking-tight text-stone-900">
@@ -211,7 +211,7 @@ export default function HomePage() {
             </div>
             <Link
               href="/service-areas"
-              className="text-sm font-semibold text-emerald-800 hover:text-emerald-700"
+              className="text-sm font-semibold text-blue-800 hover:text-blue-700"
             >
               View all areas →
             </Link>
@@ -221,7 +221,7 @@ export default function HomePage() {
               <Link
                 key={area.slug}
                 href={`/service-areas/${area.slug}/`}
-                className="rounded-full border border-stone-200 bg-stone-50 px-4 py-2 text-sm font-medium text-stone-800 transition hover:border-emerald-300 hover:bg-emerald-50 hover:text-emerald-900"
+                className="rounded-full border border-stone-200 bg-stone-50 px-4 py-2 text-sm font-medium text-stone-800 transition hover:border-blue-300 hover:bg-blue-50 hover:text-blue-900"
               >
                 {area.name}
               </Link>
@@ -234,7 +234,7 @@ export default function HomePage() {
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
         <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-wider text-emerald-800">
+            <p className="text-sm font-semibold uppercase tracking-wider text-blue-800">
               Gallery
             </p>
             <h2 className="mt-2 text-3xl font-bold tracking-tight text-stone-900">
@@ -247,7 +247,7 @@ export default function HomePage() {
           </div>
           <Link
             href="/gallery"
-            className="text-sm font-semibold text-emerald-800 hover:text-emerald-700"
+            className="text-sm font-semibold text-blue-800 hover:text-blue-700"
           >
             View gallery page →
           </Link>

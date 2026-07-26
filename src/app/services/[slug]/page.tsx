@@ -32,7 +32,7 @@ export default async function ServiceDetailPage({ params }: Props) {
     <>
       <section className="border-b border-stone-200 bg-white">
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-16">
-          <p className="text-sm font-semibold uppercase tracking-wider text-emerald-800">
+          <p className="text-sm font-semibold uppercase tracking-wider text-blue-800">
             <Link href="/services" className="hover:underline">
               Services
             </Link>{" "}
@@ -45,13 +45,13 @@ export default async function ServiceDetailPage({ params }: Props) {
           <div className="mt-6 flex flex-wrap gap-3">
             <Link
               href="/contact"
-              className="rounded-full bg-amber-500 px-6 py-3 text-sm font-bold text-emerald-950 transition hover:bg-amber-400"
+              className="rounded-full bg-red-600 px-6 py-3 text-sm font-bold text-blue-950 transition hover:bg-red-500"
             >
               Get a free quote
             </Link>
             <a
               href={site.phoneHref}
-              className="rounded-full border border-stone-300 bg-white px-6 py-3 text-sm font-semibold text-stone-800 transition hover:border-emerald-300"
+              className="rounded-full border border-stone-300 bg-white px-6 py-3 text-sm font-semibold text-stone-800 transition hover:border-blue-300"
             >
               Call {site.phone}
             </a>
@@ -71,7 +71,7 @@ export default async function ServiceDetailPage({ params }: Props) {
                   key={d}
                   className="flex gap-2.5 rounded-xl bg-white px-4 py-3 text-sm text-stone-700 shadow-sm border border-stone-200"
                 >
-                  <span className="font-bold text-emerald-700">✓</span>
+                  <span className="font-bold text-blue-700">✓</span>
                   {d}
                 </li>
               ))}
@@ -95,7 +95,7 @@ export default async function ServiceDetailPage({ params }: Props) {
                     <li key={s.slug}>
                       <Link
                         href={`/services/${s.slug}/`}
-                        className="rounded-full border border-stone-200 bg-white px-3 py-1.5 text-sm text-stone-700 hover:border-emerald-300 hover:text-emerald-900"
+                        className="rounded-full border border-stone-200 bg-white px-3 py-1.5 text-sm text-stone-700 hover:border-blue-300 hover:text-blue-900"
                       >
                         {s.title}
                       </Link>

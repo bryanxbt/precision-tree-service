@@ -1,6 +1,8 @@
-# Precision Tree Services
+# QB Tree Service
 
-Marketing website for **Precision Tree Services** — a local tree care business.
+Marketing website for **QB Tree Service** (Quintin & Bryan) — local tree care in North Indy and surrounding areas.
+
+**Brand colors:** bright red, white, and blue.
 
 ## Stack
 
@@ -8,24 +10,18 @@ Marketing website for **Precision Tree Services** — a local tree care business
 - TypeScript
 - Tailwind CSS
 
-## Location
-
-Project lives on the LaCie drive:
-
-```text
-/Volumes/BryanXBTLacie/Projects/tree-service
-```
-
 ## Live preview (GitHub Pages)
 
 https://bryanxbt.github.io/precision-tree-service/
 
 Every push to `main` rebuilds and updates that link (GitHub Actions).
 
+> Repo folder is still named `precision-tree-service` for GitHub Pages `basePath` compatibility. The public brand is **QB Tree Service**.
+
 ## Getting started
 
 ```bash
-cd /Volumes/BryanXBTLacie/Projects/tree-service
+cd precision-tree-service
 npm install
 npm run dev
 ```
@@ -37,45 +33,43 @@ Open [http://localhost:3000](http://localhost:3000).
 Edit **`src/lib/site.ts`**:
 
 - Phone, email, service area, hours
-- Service list and gallery placeholders
-- Tagline and about copy hooks
+- Service list and gallery
+- Tagline and partner story hooks
 
 ### Brand logos
 
 | File | Use |
 |------|-----|
 | `public/brand/logo-mark.png` | Header + favicon mark |
-| `public/brand/logo-wordmark.png` | Footer wordmark |
+| `public/brand/logo-wordmark.png` | Footer / hero wordmark |
 
 Paths are wired via `site.logo` in `src/lib/site.ts`.
 
 ## Pages
 
-| Route       | Purpose                          |
-| ----------- | -------------------------------- |
-| `/`         | Home / hero / services preview   |
-| `/services` | Full service list                |
-| `/about`    | Story and values                 |
-| `/gallery`  | Project placeholders             |
-| `/contact`  | Free quote form (client demo)    |
+| Route | Purpose |
+| ----- | ------- |
+| `/` | Home / hero / services preview |
+| `/services` | Full service list |
+| `/service-areas` | Local SEO city pages |
+| `/about` | Partners & values |
+| `/gallery` | Project photos |
+| `/contact` | Free quote form |
 
 ## Next steps
 
-- [ ] Real phone, email, city/service area
-- [ ] Business story and owner bios
+- [ ] Real phone, email, city/service area (confirm)
+- [ ] Partner bios and photos for Quintin & Bryan
 - [ ] Real gallery photos in `public/gallery`
 - [ ] Wire quote form to email (Resend / Formspree / etc.)
-- [ ] Deploy to Vercel under `bryanxbt`
-- [ ] Custom domain + Google Business Profile link
+- [ ] Custom domain + Google Business Profile
+- [ ] Optional: rename GitHub repo when ready (update `basePath` + Pages)
 
 ## Deploy
 
 Repo (bryanxbt): https://github.com/bryanxbt/precision-tree-service  
 
-Push to `main` to update the live GitHub Pages preview:
-
 ```bash
-gh auth switch -u bryanxbt
-cd /Volumes/BryanXBTLacie/Projects/tree-service
+gh auth switch -u bryanxbt   # if needed
 git add -A && git commit -m "Your message" && git push
 ```

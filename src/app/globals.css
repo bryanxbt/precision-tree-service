@@ -18,18 +18,18 @@ body {
   font-family: var(--font-geist-sans), system-ui, sans-serif;
 }
 
-/* Subtle pattern for hero / gallery placeholders */
+/* Brand pattern — bright red, white, blue (QB Tree Service) */
 .tree-pattern {
   background-image:
     radial-gradient(
       circle at 20% 20%,
-      rgba(255, 255, 255, 0.06) 0,
+      rgba(255, 255, 255, 0.1) 0,
       transparent 45%
     ),
     radial-gradient(
       circle at 80% 0%,
-      rgba(16, 185, 129, 0.15) 0,
-      transparent 40%
+      rgba(220, 38, 38, 0.35) 0,
+      transparent 42%
     ),
-    linear-gradient(145deg, #064e3b 0%, #065f46 40%, #14532d 100%);
+    linear-gradient(145deg, #0b1f4a 0%, #1e3a8a 45%, #172554 100%);
 }
