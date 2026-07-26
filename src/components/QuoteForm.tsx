@@ -130,7 +130,7 @@ export function QuoteForm({
             <button
               type="submit"
               disabled={status === "sending"}
-              className="w-full rounded-full bg-brand-gold px-4 py-2.5 text-sm font-bold text-stone-900 shadow-sm transition hover:bg-brand-gold-light disabled:opacity-70 lg:col-span-1"
+              className="w-full rounded-full bg-brand-gold px-4 py-2.5 text-sm font-bold text-white shadow-sm transition hover:bg-brand-gold-light disabled:opacity-70 lg:col-span-1"
             >
               {status === "sending" ? "Sending…" : "Send request"}
             </button>
@@ -151,7 +151,7 @@ export function QuoteForm({
           <button
             type="submit"
             disabled={status === "sending"}
-            className="w-full rounded-full bg-brand-gold px-6 py-3 text-sm font-bold text-stone-900 shadow-sm transition hover:bg-brand-gold-light disabled:opacity-70"
+            className="w-full rounded-full bg-brand-gold px-6 py-3 text-sm font-bold text-white shadow-sm transition hover:bg-brand-gold-light disabled:opacity-70"
           >
             {status === "sending" ? "Sending…" : "Send free quote request"}
           </button>
@@ -268,7 +268,7 @@ export function QuoteForm({
       <button
         type="submit"
         disabled={status === "sending"}
-        className="w-full rounded-full bg-brand-gold px-6 py-3 text-sm font-bold text-stone-900 shadow-sm transition hover:bg-brand-gold-light disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
+        className="w-full rounded-full bg-brand-gold px-6 py-3 text-sm font-bold text-white shadow-sm transition hover:bg-brand-gold-light disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
       >
         {status === "sending" ? "Sending…" : "Request free quote"}
       </button>

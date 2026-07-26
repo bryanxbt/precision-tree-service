@@ -8,13 +8,13 @@ export function MobileCallBar() {
       <div className="mx-auto flex max-w-lg gap-2">
         <a
           href={site.phoneHref}
-          className="flex flex-1 items-center justify-center rounded-full bg-brand-gold px-4 py-3 text-sm font-bold text-stone-900 shadow-sm"
+          className="flex flex-1 items-center justify-center rounded-full bg-brand-gold px-4 py-3 text-sm font-bold text-white shadow-sm"
         >
           Call now
         </a>
         <Link
           href="/contact"
-          className="flex flex-1 items-center justify-center rounded-full bg-brand-gold px-4 py-3 text-sm font-bold text-stone-900 shadow-sm"
+          className="flex flex-1 items-center justify-center rounded-full bg-brand-gold px-4 py-3 text-sm font-bold text-white shadow-sm"
         >
           Free quote
         </Link>

@@ -66,7 +66,7 @@ export function Header() {
           </a>
           <Link
             href="/contact"
-            className="rounded-full bg-brand-gold px-4 py-2 text-sm font-semibold text-stone-900 shadow-sm transition hover:bg-brand-gold-light"
+            className="rounded-full bg-brand-gold px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-gold-light"
           >
             Free Quote
           </Link>

@@ -45,7 +45,7 @@ export default async function ServiceDetailPage({ params }: Props) {
           <div className="mt-6 flex flex-wrap gap-3">
             <Link
               href="/contact"
-              className="rounded-full bg-brand-gold px-6 py-3 text-sm font-bold text-stone-900 transition hover:bg-brand-gold-light"
+              className="rounded-full bg-brand-gold px-6 py-3 text-sm font-bold text-white transition hover:bg-brand-gold-light"
             >
               Get a free quote
             </Link>

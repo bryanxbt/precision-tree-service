@@ -20,7 +20,7 @@ export function CTABanner({
         <div className="flex flex-wrap gap-3">
           <Link
             href="/contact"
-            className="rounded-full bg-brand-gold px-6 py-3 text-sm font-bold text-stone-900 shadow-sm transition hover:bg-brand-gold-light"
+            className="rounded-full bg-brand-gold px-6 py-3 text-sm font-bold text-white shadow-sm transition hover:bg-brand-gold-light"
           >
             Get a free quote
           </Link>

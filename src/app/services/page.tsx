@@ -73,7 +73,7 @@ export default function ServicesPage() {
                 </Link>
                 <Link
                   href="/contact"
-                  className="rounded-full bg-brand-gold px-5 py-2.5 text-sm font-semibold text-stone-900 transition hover:bg-brand-gold-light"
+                  className="rounded-full bg-brand-gold px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-gold-light"
                 >
                   Get a quote
                 </Link>

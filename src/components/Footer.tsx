@@ -126,7 +126,7 @@ export function Footer() {
           </ul>
           <Link
             href="/contact"
-            className="mt-5 inline-flex rounded-full bg-brand-gold px-4 py-2 text-sm font-semibold text-stone-900 transition hover:bg-brand-gold-light"
+            className="mt-5 inline-flex rounded-full bg-brand-gold px-4 py-2 text-sm font-semibold text-white transition hover:bg-brand-gold-light"
           >
             Request a free quote
           </Link>
