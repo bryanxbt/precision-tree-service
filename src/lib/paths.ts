@@ -1,5 +1,5 @@
 /**
- * GitHub Pages serves the site under /precision-tree-service.
+ * GitHub Pages serves the site under /qb-tree-services.
  * Next/Image does not always prefix public asset URLs with basePath on static export,
  * so we apply it ourselves for public/ files.
  */

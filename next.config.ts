@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 /** Repo name on GitHub (used for project Pages base path). */
-const repoName = "precision-tree-service";
+const repoName = "qb-tree-services";
 
 const isGitHubPages = process.env.GITHUB_PAGES === "true";
 const basePath = isGitHubPages ? `/${repoName}` : "";

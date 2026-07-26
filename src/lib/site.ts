@@ -12,7 +12,7 @@ export const site = {
   description:
     "Tree removal, trimming, stump grinding, and storm cleanup — done carefully, priced fairly, and finished clean. A small local crew homeowners can count on.",
   /** Public site URL (GitHub Pages preview for now) */
-  url: "https://bryanxbt.github.io/precision-tree-service",
+  url: "https://bryanxbt.github.io/qb-tree-services",
   // --- Update these with real business details ---
   phone: "(765) 867-1823",
   phoneHref: "tel:+17658671823",
