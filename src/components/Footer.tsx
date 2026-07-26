@@ -20,13 +20,13 @@ export function Footer() {
     <footer className="mt-auto border-t border-blue-950/10 bg-blue-950 text-blue-50 pb-20 md:pb-0">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-2 lg:grid-cols-4">
         <div>
-          <Link href="/" className="inline-block rounded-xl bg-stone-50 p-2 shadow-sm">
+          <Link href="/" className="inline-block rounded-xl bg-white p-3 shadow-sm ring-1 ring-white/20">
             <Image
-              src={site.logo.wordmark}
+              src={site.logo.full}
               alt={site.logo.wordmarkAlt}
-              width={160}
-              height={160}
-              className="h-auto w-36 object-contain sm:w-40"
+              width={200}
+              height={200}
+              className="h-auto w-40 object-contain sm:w-44"
             />
           </Link>
           <p className="mt-3 max-w-xs text-sm leading-relaxed text-blue-100/80">

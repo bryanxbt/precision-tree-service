@@ -38,12 +38,15 @@ Edit **`src/lib/site.ts`**:
 
 ### Brand logos
 
+Official art lives in `public/brand/`:
+
 | File | Use |
 |------|-----|
-| `public/brand/logo-mark.png` | Header + favicon mark |
-| `public/brand/logo-wordmark.png` | Footer / hero wordmark |
+| `QBlogo.png` | Master logo (red Q, blue B, gold tree) — header, hero, footer |
+| `logo-mark.png` / `logo-wordmark.png` | Same master (compat aliases) |
+| `src/app/icon.png` | Favicon / app icon |
 
-Paths are wired via `site.logo` in `src/lib/site.ts`.
+Source download: `Downloads/QBlogo.png`. Paths are wired via `site.logo` in `src/lib/site.ts`.
 
 ## Pages
 

@@ -38,8 +38,11 @@ export const site = {
   insured: true,
   bonded: false,
   freeEstimates: true,
-  /** Brand assets in public/brand/ — paths include basePath for GitHub Pages */
+  /** Brand assets in public/brand/ — official QBlogo (red/blue/gold) */
   logo: {
+    /** Full official logo — preferred for hero, footer, large placements */
+    full: withBasePath("/brand/QBlogo.png"),
+    /** Header / favicon use the same master art for now */
     mark: withBasePath("/brand/logo-mark.png"),
     wordmark: withBasePath("/brand/logo-wordmark.png"),
     markAlt: "QB Tree Service logo",

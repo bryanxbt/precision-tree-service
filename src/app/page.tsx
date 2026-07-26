@@ -72,12 +72,12 @@ export default function HomePage() {
             </div>
 
             <div className="flex items-center justify-center lg:justify-end">
-              <div className="w-full max-w-[220px] rounded-2xl bg-stone-50/95 p-3 shadow-2xl ring-1 ring-white/30 backdrop-blur sm:max-w-[260px] sm:p-4 lg:max-w-[300px] lg:p-5">
+              <div className="w-full max-w-[240px] rounded-2xl bg-white p-4 shadow-2xl ring-1 ring-white/40 sm:max-w-[280px] sm:p-5 lg:max-w-[320px] lg:p-6">
                 <Image
-                  src={site.logo.wordmark}
+                  src={site.logo.full}
                   alt={site.logo.wordmarkAlt}
-                  width={300}
-                  height={300}
+                  width={320}
+                  height={320}
                   priority
                   className="h-auto w-full object-contain"
                 />
