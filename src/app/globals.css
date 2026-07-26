@@ -3,11 +3,18 @@
 :root {
   --background: #fafaf9;
   --foreground: #1c1917;
+  /* Gold from the QB logo tree / "TREE SERVICES" wordmark */
+  --brand-gold: #d4a01c;
+  --brand-gold-light: #e8b82a;
+  --brand-gold-dark: #b8860b;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-brand-gold: var(--brand-gold);
+  --color-brand-gold-light: var(--brand-gold-light);
+  --color-brand-gold-dark: var(--brand-gold-dark);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }

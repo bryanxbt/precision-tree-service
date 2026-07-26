@@ -23,15 +23,15 @@ export function Header() {
             priority
           />
           <span className="min-w-0 leading-tight sm:hidden">
-            <span className="block truncate text-sm font-bold tracking-tight text-blue-950">
+            <span className="block truncate text-sm font-bold tracking-tight text-stone-900">
               {site.name}
             </span>
           </span>
           <span className="hidden min-w-0 leading-tight sm:block">
-            <span className="block truncate text-sm font-bold tracking-tight text-blue-950 sm:text-base">
+            <span className="block truncate text-sm font-bold tracking-tight text-stone-900 sm:text-base">
               {site.name}
             </span>
-            <span className="text-xs text-blue-800/70">{site.serviceArea}</span>
+            <span className="text-xs text-brand-gold-dark/70">{site.serviceArea}</span>
           </span>
         </Link>
 
@@ -47,8 +47,8 @@ export function Header() {
                 href={link.href}
                 className={`rounded-lg px-2.5 py-2 text-sm font-medium transition-colors xl:px-3 ${
                   active
-                    ? "bg-blue-50 text-blue-900"
-                    : "text-stone-600 hover:bg-stone-50 hover:text-blue-900"
+                    ? "bg-amber-50 text-brand-gold-dark"
+                    : "text-brand-gold-dark/85 hover:bg-amber-50 hover:text-brand-gold-dark"
                 }`}
               >
                 {link.label}
@@ -60,13 +60,13 @@ export function Header() {
         <div className="flex items-center gap-2">
           <a
             href={site.phoneHref}
-            className="hidden text-sm font-semibold text-blue-900 sm:inline lg:mr-1"
+            className="hidden text-sm font-semibold text-brand-gold-dark sm:inline lg:mr-1"
           >
             {site.phone}
           </a>
           <Link
             href="/contact"
-            className="rounded-full bg-blue-800 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-700"
+            className="rounded-full bg-brand-gold px-4 py-2 text-sm font-semibold text-stone-900 shadow-sm transition hover:bg-brand-gold-light"
           >
             Free Quote
           </Link>
@@ -98,14 +98,14 @@ export function Header() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="rounded-lg px-3 py-2.5 text-sm font-medium text-stone-700 hover:bg-blue-50 hover:text-blue-900"
+                className="rounded-lg px-3 py-2.5 text-sm font-medium text-stone-700 hover:bg-amber-50 hover:text-brand-gold-dark"
               >
                 {link.label}
               </Link>
             ))}
             <a
               href={site.phoneHref}
-              className="rounded-lg px-3 py-2.5 text-sm font-semibold text-blue-900"
+              className="rounded-lg px-3 py-2.5 text-sm font-semibold text-brand-gold-dark"
             >
               Call {site.phone}
             </a>

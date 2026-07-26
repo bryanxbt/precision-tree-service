@@ -34,7 +34,7 @@ export function Footer() {
           </p>
           <a
             href={site.phoneHref}
-            className="mt-4 inline-block text-lg font-bold text-red-500 hover:text-red-400"
+            className="mt-4 inline-block text-lg font-bold text-brand-gold hover:text-brand-gold-light"
           >
             {site.phone}
           </a>
@@ -126,7 +126,7 @@ export function Footer() {
           </ul>
           <Link
             href="/contact"
-            className="mt-5 inline-flex rounded-full bg-red-600 px-4 py-2 text-sm font-semibold text-blue-950 transition hover:bg-red-500"
+            className="mt-5 inline-flex rounded-full bg-brand-gold px-4 py-2 text-sm font-semibold text-stone-900 transition hover:bg-brand-gold-light"
           >
             Request a free quote
           </Link>

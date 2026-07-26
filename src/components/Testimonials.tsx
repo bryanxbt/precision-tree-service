@@ -7,7 +7,7 @@ export function Testimonials() {
     <section className="bg-stone-50">
       <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
         <div className="max-w-2xl">
-          <p className="text-sm font-semibold uppercase tracking-wider text-blue-800">
+          <p className="text-sm font-semibold uppercase tracking-wider text-brand-gold-dark">
             Testimonials
           </p>
           <h2 className="mt-2 text-3xl font-bold tracking-tight text-stone-900">
@@ -24,7 +24,7 @@ export function Testimonials() {
               key={`${t.name}-${i}`}
               className="flex flex-col rounded-2xl border border-stone-200 bg-white p-6 shadow-sm"
             >
-              <div className="flex gap-0.5 text-red-600" aria-hidden>
+              <div className="flex gap-0.5 text-brand-gold-dark" aria-hidden>
                 {"★★★★★".split("").map((s, idx) => (
                   <span key={idx}>{s}</span>
                 ))}

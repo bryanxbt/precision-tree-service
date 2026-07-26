@@ -13,7 +13,7 @@ export default function FAQPage() {
     <>
       <section className="border-b border-stone-200 bg-white">
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-16">
-          <p className="text-sm font-semibold uppercase tracking-wider text-blue-800">
+          <p className="text-sm font-semibold uppercase tracking-wider text-brand-gold-dark">
             FAQ
           </p>
           <h1 className="mt-2 max-w-2xl text-4xl font-bold tracking-tight text-stone-900">

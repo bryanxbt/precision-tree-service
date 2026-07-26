@@ -13,7 +13,7 @@ export default function ServiceAreasPage() {
     <>
       <section className="border-b border-stone-200 bg-white">
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-16">
-          <p className="text-sm font-semibold uppercase tracking-wider text-blue-800">
+          <p className="text-sm font-semibold uppercase tracking-wider text-brand-gold-dark">
             Service areas
           </p>
           <h1 className="mt-2 max-w-2xl text-4xl font-bold tracking-tight text-stone-900">
@@ -33,11 +33,11 @@ export default function ServiceAreasPage() {
             <Link
               key={area.slug}
               href={`/service-areas/${area.slug}/`}
-              className="rounded-2xl border border-stone-200 bg-white p-6 shadow-sm transition hover:border-blue-300 hover:shadow-md"
+              className="rounded-2xl border border-stone-200 bg-white p-6 shadow-sm transition hover:border-brand-gold hover:shadow-md"
             >
               <h2 className="text-xl font-bold text-stone-900">{area.name}</h2>
               <p className="mt-2 text-sm text-stone-600">{area.blurb}</p>
-              <span className="mt-4 inline-block text-sm font-semibold text-blue-800">
+              <span className="mt-4 inline-block text-sm font-semibold text-brand-gold-dark">
                 Tree service in {area.name} →
               </span>
             </Link>

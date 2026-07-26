@@ -5,7 +5,7 @@ export function ProcessSteps() {
     <section className="border-y border-stone-200 bg-white">
       <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
         <div className="max-w-2xl">
-          <p className="text-sm font-semibold uppercase tracking-wider text-blue-800">
+          <p className="text-sm font-semibold uppercase tracking-wider text-brand-gold-dark">
             The process
           </p>
           <h2 className="mt-2 text-3xl font-bold tracking-tight text-stone-900">
@@ -21,7 +21,7 @@ export function ProcessSteps() {
               key={step.step}
               className="relative rounded-2xl border border-stone-200 bg-stone-50 p-6"
             >
-              <span className="text-sm font-bold tracking-wider text-red-600">
+              <span className="text-sm font-bold tracking-wider text-brand-gold-dark">
                 STEP {step.step}
               </span>
               <h3 className="mt-3 text-xl font-bold text-stone-900">

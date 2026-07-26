@@ -12,7 +12,7 @@ export default function ContactPage() {
     <>
       <section className="border-b border-stone-200 bg-white">
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-16">
-          <p className="text-sm font-semibold uppercase tracking-wider text-blue-800">
+          <p className="text-sm font-semibold uppercase tracking-wider text-brand-gold-dark">
             Contact
           </p>
           <h1 className="mt-2 max-w-2xl text-4xl font-bold tracking-tight text-stone-900">
@@ -23,7 +23,7 @@ export default function ContactPage() {
             damage, call{" "}
             <a
               href={site.phoneHref}
-              className="font-semibold text-blue-800 hover:underline"
+              className="font-semibold text-brand-gold-dark hover:underline"
             >
               {site.phone}
             </a>
@@ -47,7 +47,7 @@ export default function ContactPage() {
                   <dd className="mt-0.5">
                     <a
                       href={site.phoneHref}
-                      className="font-semibold text-blue-900 hover:underline"
+                      className="font-semibold text-brand-gold-dark hover:underline"
                     >
                       {site.phone}
                     </a>
@@ -58,7 +58,7 @@ export default function ContactPage() {
                   <dd className="mt-0.5">
                     <a
                       href={site.emailHref}
-                      className="font-semibold text-blue-900 hover:underline"
+                      className="font-semibold text-brand-gold-dark hover:underline"
                     >
                       {site.email}
                     </a>

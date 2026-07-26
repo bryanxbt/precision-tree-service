@@ -55,7 +55,7 @@ export default function HomePage() {
                     key={item}
                     className="flex gap-2 text-xs text-blue-50/95 sm:text-sm"
                   >
-                    <span className="font-bold text-red-500">✓</span>
+                    <span className="font-bold text-brand-gold">✓</span>
                     {item}
                   </li>
                 ))}
@@ -97,7 +97,7 @@ export default function HomePage() {
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-8 gap-y-3 px-4 py-4 text-center text-sm font-medium text-stone-600 sm:px-6">
           {trustPoints.map((t) => (
             <span key={t} className="inline-flex items-center gap-1.5">
-              <span className="text-blue-700">●</span>
+              <span className="text-brand-gold-dark">●</span>
               {t}
             </span>
           ))}
@@ -108,7 +108,7 @@ export default function HomePage() {
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
         <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-wider text-blue-800">
+            <p className="text-sm font-semibold uppercase tracking-wider text-brand-gold-dark">
               Tree services
             </p>
             <h2 className="mt-2 text-3xl font-bold tracking-tight text-stone-900">
@@ -121,7 +121,7 @@ export default function HomePage() {
           </div>
           <Link
             href="/services"
-            className="text-sm font-semibold text-blue-800 hover:text-blue-700"
+            className="text-sm font-semibold text-brand-gold-dark hover:text-brand-gold"
           >
             All services →
           </Link>
@@ -132,14 +132,14 @@ export default function HomePage() {
             <Link
               key={service.slug}
               href={`/services/${service.slug}/`}
-              className="group rounded-2xl border border-stone-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-blue-300 hover:shadow-md"
+              className="group rounded-2xl border border-stone-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-brand-gold hover:shadow-md"
             >
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-100 text-blue-900">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-100 text-brand-gold-dark">
                 <span className="text-lg" aria-hidden>
                   🌲
                 </span>
               </div>
-              <h3 className="mt-3 text-base font-semibold text-stone-900 group-hover:text-blue-900">
+              <h3 className="mt-3 text-base font-semibold text-stone-900 group-hover:text-brand-gold-dark">
                 {service.title}
               </h3>
               <p className="mt-1.5 text-sm leading-relaxed text-stone-600">
@@ -157,7 +157,7 @@ export default function HomePage() {
         <div className="grid items-center gap-10 lg:grid-cols-2">
           <div className="tree-pattern flex min-h-[280px] items-end rounded-3xl p-8 text-white shadow-lg">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-wider text-red-400">
+              <p className="text-sm font-semibold uppercase tracking-wider text-brand-gold-light">
                 About us
               </p>
               <p className="mt-2 text-2xl font-bold leading-snug">
@@ -185,7 +185,7 @@ export default function HomePage() {
             </div>
             <Link
               href="/about"
-              className="mt-6 inline-flex text-sm font-semibold text-blue-800 hover:text-blue-700"
+              className="mt-6 inline-flex text-sm font-semibold text-brand-gold-dark hover:text-brand-gold"
             >
               More about us →
             </Link>
@@ -198,7 +198,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
           <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-wider text-blue-800">
+              <p className="text-sm font-semibold uppercase tracking-wider text-brand-gold-dark">
                 Service areas
               </p>
               <h2 className="mt-2 text-3xl font-bold tracking-tight text-stone-900">
@@ -211,7 +211,7 @@ export default function HomePage() {
             </div>
             <Link
               href="/service-areas"
-              className="text-sm font-semibold text-blue-800 hover:text-blue-700"
+              className="text-sm font-semibold text-brand-gold-dark hover:text-brand-gold"
             >
               View all areas →
             </Link>
@@ -221,7 +221,7 @@ export default function HomePage() {
               <Link
                 key={area.slug}
                 href={`/service-areas/${area.slug}/`}
-                className="rounded-full border border-stone-200 bg-stone-50 px-4 py-2 text-sm font-medium text-stone-800 transition hover:border-blue-300 hover:bg-blue-50 hover:text-blue-900"
+                className="rounded-full border border-stone-200 bg-stone-50 px-4 py-2 text-sm font-medium text-stone-800 transition hover:border-brand-gold hover:bg-amber-50 hover:text-brand-gold-dark"
               >
                 {area.name}
               </Link>
@@ -234,7 +234,7 @@ export default function HomePage() {
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
         <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-wider text-blue-800">
+            <p className="text-sm font-semibold uppercase tracking-wider text-brand-gold-dark">
               Gallery
             </p>
             <h2 className="mt-2 text-3xl font-bold tracking-tight text-stone-900">
@@ -247,7 +247,7 @@ export default function HomePage() {
           </div>
           <Link
             href="/gallery"
-            className="text-sm font-semibold text-blue-800 hover:text-blue-700"
+            className="text-sm font-semibold text-brand-gold-dark hover:text-brand-gold"
           >
             View gallery page →
           </Link>

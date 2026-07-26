@@ -30,7 +30,7 @@ export default async function ServiceAreaPage({ params }: Props) {
     <>
       <section className="border-b border-stone-200 bg-white">
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-16">
-          <p className="text-sm font-semibold uppercase tracking-wider text-blue-800">
+          <p className="text-sm font-semibold uppercase tracking-wider text-brand-gold-dark">
             <Link href="/service-areas" className="hover:underline">
               Service areas
             </Link>{" "}
@@ -59,7 +59,7 @@ export default async function ServiceAreaPage({ params }: Props) {
                 <li key={s.slug}>
                   <Link
                     href={`/services/${s.slug}/`}
-                    className="block rounded-xl border border-stone-200 bg-white px-4 py-3 text-sm font-medium text-stone-800 shadow-sm hover:border-blue-300 hover:text-blue-900"
+                    className="block rounded-xl border border-stone-200 bg-white px-4 py-3 text-sm font-medium text-stone-800 shadow-sm hover:border-brand-gold hover:text-brand-gold-dark"
                   >
                     {s.title}
                   </Link>
@@ -70,7 +70,7 @@ export default async function ServiceAreaPage({ params }: Props) {
               <p className="font-semibold">Prefer to call?</p>
               <a
                 href={site.phoneHref}
-                className="mt-2 block text-2xl font-bold text-red-500"
+                className="mt-2 block text-2xl font-bold text-brand-gold"
               >
                 {site.phone}
               </a>

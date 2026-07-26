@@ -12,7 +12,7 @@ export default function AboutPage() {
     <>
       <section className="border-b border-stone-200 bg-white">
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-16">
-          <p className="text-sm font-semibold uppercase tracking-wider text-blue-800">
+          <p className="text-sm font-semibold uppercase tracking-wider text-brand-gold-dark">
             About us
           </p>
           <h1 className="mt-2 max-w-2xl text-4xl font-bold tracking-tight text-stone-900">
@@ -29,7 +29,7 @@ export default function AboutPage() {
       <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
         <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
           <div className="tree-pattern min-h-[320px] rounded-3xl p-8 text-white shadow-lg">
-            <p className="text-sm font-semibold uppercase tracking-wider text-red-400">
+            <p className="text-sm font-semibold uppercase tracking-wider text-brand-gold-light">
               Our promise
             </p>
             <p className="mt-4 text-2xl font-bold leading-snug sm:text-3xl">

@@ -13,7 +13,7 @@ export default function ServicesPage() {
     <>
       <section className="border-b border-stone-200 bg-white">
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-16">
-          <p className="text-sm font-semibold uppercase tracking-wider text-blue-800">
+          <p className="text-sm font-semibold uppercase tracking-wider text-brand-gold-dark">
             Services
           </p>
           <h1 className="mt-2 max-w-2xl text-4xl font-bold tracking-tight text-stone-900">
@@ -24,7 +24,7 @@ export default function ServicesPage() {
             finish. Not sure what you need?{" "}
             <Link
               href="/contact"
-              className="font-semibold text-blue-800 hover:underline"
+              className="font-semibold text-brand-gold-dark hover:underline"
             >
               Request a free consultation
             </Link>
@@ -41,13 +41,13 @@ export default function ServicesPage() {
               id={service.slug}
               className="flex flex-col rounded-3xl border border-stone-200 bg-white p-6 shadow-sm sm:p-8"
             >
-              <span className="text-xs font-bold uppercase tracking-wider text-blue-700">
+              <span className="text-xs font-bold uppercase tracking-wider text-brand-gold-dark">
                 0{i + 1}
               </span>
               <h2 className="mt-2 text-2xl font-bold text-stone-900">
                 <Link
                   href={`/services/${service.slug}/`}
-                  className="hover:text-blue-800"
+                  className="hover:text-brand-gold-dark"
                 >
                   {service.title}
                 </Link>
@@ -59,7 +59,7 @@ export default function ServicesPage() {
                     key={detail}
                     className="flex gap-2 text-sm text-stone-700"
                   >
-                    <span className="font-bold text-blue-700">✓</span>
+                    <span className="font-bold text-brand-gold-dark">✓</span>
                     {detail}
                   </li>
                 ))}
@@ -67,13 +67,13 @@ export default function ServicesPage() {
               <div className="mt-6 flex flex-wrap gap-3">
                 <Link
                   href={`/services/${service.slug}/`}
-                  className="text-sm font-semibold text-blue-800 hover:underline"
+                  className="text-sm font-semibold text-brand-gold-dark hover:underline"
                 >
                   Learn more →
                 </Link>
                 <Link
                   href="/contact"
-                  className="rounded-full bg-blue-800 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-blue-700"
+                  className="rounded-full bg-brand-gold px-5 py-2.5 text-sm font-semibold text-stone-900 transition hover:bg-brand-gold-light"
                 >
                   Get a quote
                 </Link>
