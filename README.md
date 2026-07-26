@@ -63,7 +63,8 @@ Source download: `Downloads/QBlogo.png`. Paths are wired via `site.logo` in `src
 
 - [ ] Real phone, email, city/service area (confirm)
 - [ ] Partner bios and photos for Quintin & Bryan
-- [ ] Real gallery photos in `public/gallery`
+- [ ] Replace stock/AI gallery with real job-site photos when available
+- [ ] Optional: add QB logo vinyl to trucks in future real photos
 - [ ] Wire quote form to email (Resend / Formspree / etc.)
 - [ ] Custom domain + Google Business Profile
 - [ ] Optional: rename GitHub repo when ready (update `basePath` + Pages)

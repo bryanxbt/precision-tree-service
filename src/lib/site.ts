@@ -315,7 +315,7 @@ export const faqs = [
 /** Hero background (home page) — paths include basePath for GitHub Pages */
 export const heroImage = {
   src: withBasePath("/hero/tree-removal-hero.jpg"),
-  alt: "Professional tree removal crew at work",
+  alt: "QB Tree Service crew working a large residential tree at sunset",
 } as const;
 
 export const galleryItems = [
