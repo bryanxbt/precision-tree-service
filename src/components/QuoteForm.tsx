@@ -1,9 +1,12 @@
 "use client";
 
 import { FormEvent, useId, useState } from "react";
+import { useRouter } from "next/navigation";
+import { payloadFromForm, submitQuote } from "@/lib/forms";
+import { trackLeadConversion } from "@/lib/track";
 import { services, site } from "@/lib/site";
 
-type Status = "idle" | "sending" | "sent" | "error";
+type Status = "idle" | "sending" | "error";
 
 type QuoteFormProps = {
   /** Compact hero form (name, phone, message only) */
@@ -11,53 +14,68 @@ type QuoteFormProps = {
   className?: string;
   /** Light text styles for dark hero backgrounds */
   onDark?: boolean;
+  /** Analytics / CRM source tag */
+  source?: string;
 };
 
 export function QuoteForm({
   variant = "full",
   className = "",
   onDark = false,
+  source,
 }: QuoteFormProps) {
   const [status, setStatus] = useState<Status>("idle");
+  const [errorMsg, setErrorMsg] = useState("");
   const uid = useId();
+  const router = useRouter();
+  const formSource =
+    source ||
+    (variant === "hero"
+      ? "hero"
+      : variant === "compact"
+        ? "compact"
+        : "contact");
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setStatus("sending");
+    setErrorMsg("");
 
-    // Client-side only for v1 — wire to Formspree / Resend / API later
-    await new Promise((r) => setTimeout(r, 700));
-    setStatus("sent");
-    (e.target as HTMLFormElement).reset();
+    const form = e.currentTarget;
+    const payload = payloadFromForm(form, formSource);
+    const result = await submitQuote(payload);
+
+    if (!result.ok) {
+      setStatus("error");
+      setErrorMsg(result.error);
+      return;
+    }
+
+    trackLeadConversion();
+    form.reset();
+    router.push("/thank-you/");
   }
 
-  if (status === "sent") {
-    return (
+  const errorBlock =
+    status === "error" ? (
       <div
-        className={`rounded-2xl p-6 text-center sm:p-8 ${
+        className={`rounded-xl border px-3 py-2 text-sm ${
           onDark
-            ? "border border-white/20 bg-white/10 text-white"
-            : "border border-brand-gold/40 bg-amber-50 text-brand-gold-dark"
-        } ${className}`}
+            ? "border-red-300/40 bg-red-950/40 text-red-100"
+            : "border-red-200 bg-red-50 text-red-800"
+        }`}
+        role="alert"
       >
-        <p className="text-lg font-semibold">Thanks — we got your request.</p>
-        <p
-          className={`mt-2 text-sm ${onDark ? "text-blue-50/85" : "text-brand-gold-dark/80"}`}
-        >
-          We will follow up soon. For urgent storm work, call us directly.
+        <p>{errorMsg}</p>
+        <p className="mt-1 font-semibold">
+          Call or text{" "}
+          <a href={site.phoneHref} className="underline underline-offset-2">
+            {site.phone}
+          </a>{" "}
+          anytime.
         </p>
-        <button
-          type="button"
-          onClick={() => setStatus("idle")}
-          className={`mt-6 text-sm font-semibold underline-offset-2 hover:underline ${
-            onDark ? "text-brand-gold-light" : "text-brand-gold-dark"
-          }`}
-        >
-          Send another message
-        </button>
       </div>
-    );
-  }
+    ) : null;
 
   if (variant === "compact" || variant === "hero") {
     const isHero = variant === "hero";
@@ -86,6 +104,7 @@ export function QuoteForm({
             </p>
           </div>
         </div>
+        {errorBlock}
         <div
           className={
             isHero
@@ -96,6 +115,7 @@ export function QuoteForm({
           <input
             name="name"
             required
+            autoComplete="name"
             placeholder="Full name *"
             className={input}
             aria-label="Full name"
@@ -104,6 +124,7 @@ export function QuoteForm({
             name="phone"
             type="tel"
             required
+            autoComplete="tel"
             placeholder="Phone *"
             className={input}
             aria-label="Phone"
@@ -141,10 +162,14 @@ export function QuoteForm({
             type="checkbox"
             name="consent"
             required
+            value="yes"
             className="mt-0.5 rounded border-stone-300"
           />
           <span>
-            I consent to being contacted about my tree service request.
+            I consent to being contacted about my tree service request.{" "}
+            <a href="/privacy/" className="underline underline-offset-2">
+              Privacy
+            </a>
           </span>
         </label>
         {!isHero && (
@@ -169,6 +194,7 @@ export function QuoteForm({
       onSubmit={onSubmit}
       className={`space-y-5 rounded-2xl border border-stone-200 bg-white p-6 shadow-sm sm:p-8 ${className}`}
     >
+      {errorBlock}
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
           <label htmlFor={`${uid}-name`} className={labelCls}>
@@ -178,6 +204,7 @@ export function QuoteForm({
             id={`${uid}-name`}
             name="name"
             required
+            autoComplete="name"
             placeholder="Jane Smith"
             className={fieldCls}
           />
@@ -191,6 +218,7 @@ export function QuoteForm({
             name="phone"
             type="tel"
             required
+            autoComplete="tel"
             placeholder="(555) 123-4567"
             className={fieldCls}
           />
@@ -205,6 +233,7 @@ export function QuoteForm({
           name="email"
           type="email"
           required
+          autoComplete="email"
           placeholder="you@example.com"
           className={fieldCls}
         />
@@ -217,6 +246,7 @@ export function QuoteForm({
           id={`${uid}-location`}
           name="location"
           required
+          autoComplete="street-address"
           placeholder="123 Oak St, Your City"
           className={fieldCls}
         />
@@ -261,9 +291,16 @@ export function QuoteForm({
           type="checkbox"
           name="consent"
           required
+          value="yes"
           className="mt-0.5 rounded border-stone-300"
         />
-        <span>I consent to being contacted about my tree service request.</span>
+        <span>
+          I consent to being contacted about my tree service request. See our{" "}
+          <a href="/privacy/" className="underline underline-offset-2">
+            privacy policy
+          </a>
+          .
+        </span>
       </label>
       <button
         type="submit"
@@ -273,8 +310,14 @@ export function QuoteForm({
         {status === "sending" ? "Sending…" : "Request free quote"}
       </button>
       <p className="text-xs text-stone-500">
-        Form is demo-only until we connect email delivery (Formspree, Resend,
-        etc.).
+        Prefer the phone? Call{" "}
+        <a
+          href={site.phoneHref}
+          className="font-semibold text-brand-gold-dark hover:underline"
+        >
+          {site.phone}
+        </a>{" "}
+        — we answer local calls.
       </p>
     </form>
   );

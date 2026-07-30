@@ -34,6 +34,12 @@ jobs:
         run: npm run build
         env:
           GITHUB_PAGES: "true"
+          # Set these under repo Settings → Secrets and variables → Actions → Variables
+          NEXT_PUBLIC_FORMSPREE_ID: ${{ vars.NEXT_PUBLIC_FORMSPREE_ID }}
+          NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY: ${{ vars.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY }}
+          NEXT_PUBLIC_FORMSUBMIT_EMAIL: ${{ vars.NEXT_PUBLIC_FORMSUBMIT_EMAIL }}
+          NEXT_PUBLIC_GA_MEASUREMENT_ID: ${{ vars.NEXT_PUBLIC_GA_MEASUREMENT_ID }}
+          NEXT_PUBLIC_META_PIXEL_ID: ${{ vars.NEXT_PUBLIC_META_PIXEL_ID }}
 
       - name: Ensure .nojekyll
         run: touch out/.nojekyll

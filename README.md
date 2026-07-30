@@ -1,16 +1,15 @@
 # QB Tree Services
 
-Marketing website for **QB Tree Services** (Quintin & Bryan) — local tree care in North Indy and surrounding areas.
+Marketing website + lead funnel for **QB Tree Services** (Quintin & Bryan) — local tree care in North Indy and surrounding areas.
 
-**Brand colors:** bright red, white, and blue.
+**Brand colors:** bright red, white, and blue (logo gold accents).
 
 ## Stack
 
-- Next.js (App Router)
-- TypeScript
-- Tailwind CSS
+- Next.js (App Router) · TypeScript · Tailwind CSS
+- Static export for GitHub Pages
 
-## Live preview (GitHub Pages)
+## Live preview
 
 https://bryanxbt.github.io/qb-tree-services/
 
@@ -19,57 +18,69 @@ Every push to `main` rebuilds and updates that link (GitHub Actions).
 ## Getting started
 
 ```bash
-cd qb-tree-services   # or your local clone path
+cd precision-tree-service   # or your clone path
+cp .env.example .env.local  # optional: form + analytics keys
 npm install
 npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000).
 
-## Customize business details
+## Marketing funnel (launch)
+
+See **[LAUNCH.md](./LAUNCH.md)** for the full checklist (form wiring, Google Business Profile, ads, reviews).
+
+### Connect quote leads (required for launch)
+
+Pick **one** and set it as a GitHub Actions **Variable** (or in `.env.local`):
+
+| Variable | Service |
+|----------|---------|
+| `NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY` | [Web3Forms](https://web3forms.com) (recommended) |
+| `NEXT_PUBLIC_FORMSPREE_ID` | [Formspree](https://formspree.io) |
+| `NEXT_PUBLIC_FORMSUBMIT_EMAIL` | [FormSubmit](https://formsubmit.co) |
+
+Optional analytics:
+
+- `NEXT_PUBLIC_GA_MEASUREMENT_ID` — Google Analytics 4  
+- `NEXT_PUBLIC_META_PIXEL_ID` — Meta ads pixel  
+
+Redeploy after adding Variables so they bake into the static build.
+
+### Customize business details
 
 Edit **`src/lib/site.ts`**:
 
-- Phone, email, service area, hours
-- Service list and gallery
-- Tagline and partner story hooks
+- Phone, email, service area, hours  
+- Service list, cities, gallery  
+- Real reviews (set `placeholder: false`)  
 
 ### Brand logos
 
-Official art lives in `public/brand/`:
-
 | File | Use |
 |------|-----|
-| `QBlogo.png` | Master logo (red Q, blue B, gold tree) — header, hero, footer |
-| `logo-mark.png` / `logo-wordmark.png` | Same master (compat aliases) |
-| `src/app/icon.png` | Favicon / app icon |
-
-Source download: `Downloads/QBlogo.png`. Paths are wired via `site.logo` in `src/lib/site.ts`.
+| `public/brand/QBlogo.png` | Master logo |
+| `logo-mark.png` / `logo-wordmark.png` | Compat aliases |
+| `src/app/icon.png` | Favicon |
 
 ## Pages
 
 | Route | Purpose |
 | ----- | ------- |
-| `/` | Home / hero / services preview |
-| `/services` | Full service list |
+| `/` | Home / hero quote form |
+| `/services` | Full service list + detail pages |
 | `/service-areas` | Local SEO city pages |
-| `/about` | Partners & values |
 | `/gallery` | Project photos |
-| `/contact` | Free quote form |
-
-## Next steps
-
-- [ ] Real phone, email, city/service area (confirm)
-- [ ] Partner bios and photos for Quintin & Bryan
-- [ ] Replace stock/AI gallery with real job-site photos when available
-- [ ] Optional: add QB logo vinyl to trucks in future real photos
-- [ ] Wire quote form to email (Resend / Formspree / etc.)
-- [ ] Custom domain + Google Business Profile
-- [ ] Optional: rename GitHub repo when ready (update `basePath` + Pages)
+| `/blog` | SEO guides (cost, permits, insurance…) |
+| `/about` | Partners & values |
+| `/faq` | Common questions |
+| `/contact` | Full free quote form |
+| `/thank-you` | Post-submit conversion page |
+| `/privacy` | Privacy policy |
 
 ## Deploy
 
-Repo (bryanxbt): https://github.com/bryanxbt/qb-tree-services  
+Repo: https://github.com/bryanxbt/qb-tree-services  
 
 ```bash
 gh auth switch -u bryanxbt   # if needed

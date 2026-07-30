@@ -55,6 +55,7 @@ export const navLinks = [
   { href: "/services", label: "Services" },
   { href: "/service-areas", label: "Service Areas" },
   { href: "/gallery", label: "Gallery" },
+  { href: "/blog", label: "Blog" },
   { href: "/about", label: "About" },
   { href: "/faq", label: "FAQ" },
   { href: "/contact", label: "Contact" },
@@ -187,6 +188,12 @@ export const serviceAreas = [
     name: "Cicero",
     blurb:
       "Residential and light commercial tree care for Cicero and nearby neighborhoods.",
+  },
+  {
+    slug: "arcadia",
+    name: "Arcadia",
+    blurb:
+      "Tree removal, trimming, stump grinding, and storm cleanup for Arcadia homes and properties.",
   },
   {
     slug: "noblesville",

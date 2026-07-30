@@ -112,6 +112,14 @@ export function Footer() {
                 </Link>
               </li>
             ))}
+            <li>
+              <Link
+                href="/privacy/"
+                className="text-sm text-blue-100/90 transition hover:text-white"
+              >
+                Privacy
+              </Link>
+            </li>
           </ul>
           <p className="mt-5 text-sm font-semibold uppercase tracking-wider text-blue-200/80">
             Hours
@@ -138,7 +146,12 @@ export function Footer() {
           <p>
             © {new Date().getFullYear()} {site.name}. All rights reserved.
           </p>
-          <p>Insured · Local crew · Free estimates</p>
+          <p className="flex flex-wrap items-center gap-x-3 gap-y-1">
+            <span>Insured · Local crew · Free estimates</span>
+            <Link href="/privacy/" className="hover:text-blue-100">
+              Privacy
+            </Link>
+          </p>
         </div>
       </div>
     </footer>
