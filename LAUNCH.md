@@ -54,7 +54,7 @@ Local test: copy `.env.example` → `.env.local`, fill one value, `npm run dev`,
 
 - [ ] Create GBP: **QB Tree Services** (or consistent legal/DBA name)
 - [ ] Primary category: **Tree service**
-- [ ] Service areas: Kokomo, Tipton, Cicero, Arcadia, Noblesville, Carmel, Westfield, Fishers, Indianapolis
+- [ ] Service areas: Kokomo → Greenwood corridor (Tipton, Cicero, Arcadia, Westfield, Noblesville, Carmel, Fishers, Indianapolis, Greenwood)
 - [ ] Hours match the site
 - [ ] Phone + website URL (Pages URL until custom domain)
 - [ ] Upload logo + every job photo you have

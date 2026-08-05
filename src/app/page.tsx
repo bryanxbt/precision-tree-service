@@ -205,9 +205,8 @@ export default function HomePage() {
                 Proudly serving {site.serviceArea}
               </h2>
               <p className="mt-2 max-w-xl text-stone-600">
-                Tree removal, trimming, stump grinding, and storm cleanup for
-                homes and businesses across our service towns — and nearby if we
-                can get there.
+                Based in Kokomo and Greenwood, we take tree jobs in the towns
+                between us — removal, trimming, stumps, and storm cleanup.
               </p>
             </div>
             <Link

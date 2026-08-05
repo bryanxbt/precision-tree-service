@@ -18,8 +18,8 @@ export const site = {
   phoneHref: "tel:+17658671823",
   email: "hello@qbtreeservices.com",
   emailHref: "mailto:hello@qbtreeservices.com",
-  /** Short area phrase used in hero, FAQ, and meta */
-  serviceArea: "North & Central Indiana",
+  /** Short area phrase used in hero, FAQ, and meta — corridor between partners */
+  serviceArea: "Kokomo to Greenwood",
   hours: "Mon–Sat 7am–6pm · Emergency 24/7",
   hoursDetailed: [
     { day: "Monday", time: "7:00am – 6:00pm" },
@@ -170,7 +170,10 @@ export const services = [
   },
 ] as const;
 
-/** Cities/areas you serve — local SEO pages */
+/**
+ * Cities along the corridor between partners (Kokomo north → Greenwood south).
+ * Local SEO pages — keep to towns you will actually drive for.
+ */
 export const serviceAreas = [
   {
     slug: "kokomo",
@@ -197,6 +200,12 @@ export const serviceAreas = [
       "Tree removal, trimming, stump grinding, and storm cleanup for Arcadia homes and properties.",
   },
   {
+    slug: "westfield",
+    name: "Westfield",
+    blurb:
+      "Tree service in Westfield for removals, stump grinding, and lot clearing.",
+  },
+  {
     slug: "noblesville",
     name: "Noblesville",
     blurb:
@@ -209,12 +218,6 @@ export const serviceAreas = [
       "Professional tree work in Carmel with careful cleanup and free estimates.",
   },
   {
-    slug: "westfield",
-    name: "Westfield",
-    blurb:
-      "Tree service in Westfield for removals, stump grinding, and lot clearing.",
-  },
-  {
     slug: "fishers",
     name: "Fishers",
     blurb:
@@ -225,6 +228,12 @@ export const serviceAreas = [
     name: "Indianapolis",
     blurb:
       "Tree removal, trimming, and emergency storm work across Indianapolis.",
+  },
+  {
+    slug: "greenwood",
+    name: "Greenwood",
+    blurb:
+      "Tree removal, trimming, stump grinding, and storm cleanup for Greenwood homes and properties.",
   },
 ] as const;
 
@@ -281,7 +290,7 @@ export const faqs = [
   {
     question: "What areas do you service?",
     answer:
-      `We serve ${site.serviceArea}. If you are nearby and do not see your town listed, still reach out — we often can help.`,
+      `We work the corridor from ${site.serviceArea} — one partner based in Kokomo, one in Greenwood — so we cover jobs between our homes and nearby towns. If you are close but not listed, still reach out.`,
   },
   {
     question: "Are you insured?",

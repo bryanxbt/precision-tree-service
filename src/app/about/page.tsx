@@ -39,15 +39,16 @@ export default function AboutPage() {
           </div>
           <div className="space-y-4 text-stone-600 leading-relaxed">
             <p>
-              We’re just getting started in {site.serviceArea}, and every job
-              is a chance to earn a referral. That means we take the time to
-              explain options, protect your property, and price jobs fairly.
+              We’re just getting started, and every job is a chance to earn a
+              referral. Quintin is based in Kokomo; Bryan is based in Greenwood.
+              Together we cover tree work along that corridor — and we take the
+              time to explain options, protect your property, and price jobs
+              fairly.
             </p>
             <p>
               The name says who we are: <strong>Q</strong>uintin and{" "}
               <strong>B</strong>ryan — two partners you can call directly, not a
-              call center. Add full bios and job photos here as the business
-              grows.
+              call center.
             </p>
             <ul className="space-y-2 pt-2 text-sm font-medium text-stone-800">
               <li>• Safety-focused crew practices</li>

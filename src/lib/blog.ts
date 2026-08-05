@@ -39,7 +39,7 @@ export const blogPosts: BlogPost[] = [
         heading: "How to get an accurate quote",
         paragraphs: [
           "The best quotes come from an on-site walkthrough. Photos help for a rough idea, but a good crew wants to see lean, targets (what the tree could hit), access paths, and underground or overhead hazards. Ask what is included: rigging, haul-away, stump grinding, and any permits if your city requires them.",
-          "At QB Tree Services we give free written estimates for most residential jobs across North and Central Indiana — so you can compare apples to apples before anyone starts cutting.",
+          "At QB Tree Services we give free written estimates for most residential jobs from Kokomo to Greenwood — so you can compare apples to apples before anyone starts cutting.",
         ],
       },
       {
@@ -75,7 +75,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: "How we handle it",
         paragraphs: [
-          "When you request a quote, tell us your city and whether you are in an HOA. We will flag anything that commonly needs a permit in the areas we serve (Kokomo, Noblesville, Fishers, Carmel, Westfield, Cicero, Tipton, Arcadia, Indianapolis, and nearby). If a formal permit is required, we can discuss who files it and how it affects timing.",
+          "When you request a quote, tell us your city and whether you are in an HOA. We will flag anything that commonly needs a permit in the areas we serve (Kokomo through Greenwood — including Tipton, Cicero, Westfield, Noblesville, Carmel, Fishers, Indianapolis, and nearby). If a formal permit is required, we can discuss who files it and how it affects timing.",
           "Emergency removals after storms — trees on houses, blocked driveways, or imminent hazards — are usually treated differently. Safety comes first; paperwork can follow where allowed.",
         ],
       },
