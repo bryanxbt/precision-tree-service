@@ -205,8 +205,9 @@ export default function HomePage() {
                 Proudly serving {site.serviceArea}
               </h2>
               <p className="mt-2 max-w-xl text-stone-600">
-                Local tree work nearby. Update the city list in site config for
-                your real towns — it helps people (and Google) find you.
+                Tree removal, trimming, stump grinding, and storm cleanup for
+                homes and businesses across our service towns — and nearby if we
+                can get there.
               </p>
             </div>
             <Link
@@ -255,8 +256,8 @@ export default function HomePage() {
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {galleryItems.map((item) => (
             <Link
-              key={item.title}
-              href="/gallery"
+              key={item.slug}
+              href={`/gallery/${item.slug}/`}
               className="group overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-sm transition hover:shadow-md"
             >
               <div className="relative aspect-[4/3] overflow-hidden bg-stone-100">

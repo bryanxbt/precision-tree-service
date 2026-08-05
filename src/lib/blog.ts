@@ -39,7 +39,7 @@ export const blogPosts: BlogPost[] = [
         heading: "How to get an accurate quote",
         paragraphs: [
           "The best quotes come from an on-site walkthrough. Photos help for a rough idea, but a good crew wants to see lean, targets (what the tree could hit), access paths, and underground or overhead hazards. Ask what is included: rigging, haul-away, stump grinding, and any permits if your city requires them.",
-          "At QB Tree Services we give free written estimates for most residential jobs in North Indy and surrounding areas — so you can compare apples to apples before anyone starts cutting.",
+          "At QB Tree Services we give free written estimates for most residential jobs across North and Central Indiana — so you can compare apples to apples before anyone starts cutting.",
         ],
       },
       {

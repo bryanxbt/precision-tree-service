@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { blogPosts } from "@/lib/blog";
-import { serviceAreas, services, site } from "@/lib/site";
+import { galleryItems, serviceAreas, services, site } from "@/lib/site";
 
 export const dynamic = "force-static";
 
@@ -36,6 +36,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.7,
+    })),
+    ...galleryItems.map((g) => ({
+      url: `${base}/gallery/${g.slug}/`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
     })),
     ...blogPosts.map((p) => ({
       url: `${base}/blog/${p.slug}/`,

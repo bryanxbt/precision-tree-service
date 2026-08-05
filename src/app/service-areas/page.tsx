@@ -20,9 +20,9 @@ export default function ServiceAreasPage() {
             Tree service near you
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-stone-600">
-            We proudly serve {site.serviceArea}. Update these towns to match
-            where you actually work — local pages help neighbors find you on
-            Google.
+            We proudly serve {site.serviceArea} — including the towns below. If
+            you are close but do not see your city listed, still reach out; we
+            often can help.
           </p>
         </div>
       </section>

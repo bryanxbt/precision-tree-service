@@ -18,7 +18,8 @@ export const site = {
   phoneHref: "tel:+17658671823",
   email: "hello@qbtreeservices.com",
   emailHref: "mailto:hello@qbtreeservices.com",
-  serviceArea: "North Indy & surrounding areas",
+  /** Short area phrase used in hero, FAQ, and meta */
+  serviceArea: "North & Central Indiana",
   hours: "Mon–Sat 7am–6pm · Emergency 24/7",
   hoursDetailed: [
     { day: "Monday", time: "7:00am – 6:00pm" },
@@ -327,39 +328,57 @@ export const heroImage = {
 
 export const galleryItems = [
   {
+    slug: "large-oak-removal",
     title: "Large oak removal",
     category: "Tree Removal",
     caption: "Full takedown and cleanup on a residential lot",
+    summary:
+      "Careful sectional removal of a large oak near structures, with full debris haul-away and a clean finish.",
     src: withBasePath("/gallery/large-oak-removal.jpg"),
   },
   {
+    slug: "canopy-lift-thin",
     title: "Canopy lift & thin",
     category: "Trimming",
     caption: "Improved light and clearance over the driveway",
+    summary:
+      "Selective pruning to open the canopy, improve clearance for vehicles, and keep the tree healthy.",
     src: withBasePath("/gallery/canopy-lift-thin.jpg"),
   },
   {
+    slug: "storm-cleanup",
     title: "Storm cleanup",
     category: "Emergency",
     caption: "Fast response after a windstorm",
+    summary:
+      "Priority storm response to clear fallen limbs, restore access, and make the property safe again.",
     src: withBasePath("/gallery/storm-cleanup.jpg"),
   },
   {
+    slug: "stump-grind-finish",
     title: "Stump grind & finish",
     category: "Stump Grinding",
     caption: "Yard ready for new grass and landscaping",
+    summary:
+      "Stump ground below grade so the yard can be reseeded, landscaped, or planted without a leftover obstacle.",
     src: withBasePath("/gallery/stump-grinding.jpg"),
   },
   {
+    slug: "backyard-access-job",
     title: "Backyard access job",
     category: "Tree Removal",
     caption: "Tight-space removal without property damage",
+    summary:
+      "Tight-access residential removal using controlled rigging to protect fences, lawns, and nearby structures.",
     src: withBasePath("/gallery/backyard-access.jpg"),
   },
   {
+    slug: "lot-prep-for-build",
     title: "Lot prep for build",
     category: "Lot Clearing",
     caption: "Selective clearing for a new home site",
+    summary:
+      "Selective lot clearing to open build space and access while removing brush and unwanted trees.",
     src: withBasePath("/gallery/lot-prep.jpg"),
   },
 ] as const;

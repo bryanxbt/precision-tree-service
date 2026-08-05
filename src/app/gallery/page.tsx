@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { CTABanner } from "@/components/CTABanner";
 import { galleryItems, site } from "@/lib/site";
 
@@ -20,9 +21,9 @@ export default function GalleryPage() {
             Work that speaks for itself
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-stone-600">
-            A look at the kind of tree removal, trimming, storm cleanup, and lot
-            work we do. Add your own job photos here as you complete more
-            projects.
+            A look at the kind of tree removal, trimming, storm cleanup, stump
+            grinding, and lot work we do for homeowners and businesses in{" "}
+            {site.serviceArea}.
           </p>
         </div>
       </section>
@@ -30,9 +31,10 @@ export default function GalleryPage() {
       <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {galleryItems.map((item) => (
-            <article
-              key={item.title}
-              className="overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-sm"
+            <Link
+              key={item.slug}
+              href={`/gallery/${item.slug}/`}
+              className="group overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-sm transition hover:border-brand-gold hover:shadow-md"
             >
               <div className="relative aspect-[4/3] overflow-hidden bg-stone-100">
                 <Image
@@ -40,7 +42,7 @@ export default function GalleryPage() {
                   alt={`${item.title} — ${item.caption}`}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="object-cover"
+                  className="object-cover transition duration-300 group-hover:scale-105"
                 />
                 <span className="absolute bottom-3 left-3 rounded-full bg-black/50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white backdrop-blur">
                   {item.category}
@@ -49,8 +51,11 @@ export default function GalleryPage() {
               <div className="p-5">
                 <h2 className="font-semibold text-stone-900">{item.title}</h2>
                 <p className="mt-1 text-sm text-stone-600">{item.caption}</p>
+                <span className="mt-3 inline-block text-sm font-semibold text-brand-gold-dark">
+                  View project →
+                </span>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
       </section>
