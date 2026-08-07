@@ -9,7 +9,7 @@ import { services, site } from "@/lib/site";
 type Status = "idle" | "sending" | "error";
 
 type QuoteFormProps = {
-  /** Compact hero form (name, phone, message only) */
+  /** hero/compact: contact fields + message; full: + service select */
   variant?: "full" | "compact" | "hero";
   className?: string;
   /** Light text styles for dark hero backgrounds */
@@ -108,7 +108,7 @@ export function QuoteForm({
         <div
           className={
             isHero
-              ? "grid gap-2 sm:grid-cols-2 lg:grid-cols-4 sm:gap-3"
+              ? "grid gap-2 sm:grid-cols-2 sm:gap-3"
               : "space-y-3"
           }
         >
@@ -129,12 +129,29 @@ export function QuoteForm({
             className={input}
             aria-label="Phone"
           />
+          <input
+            name="email"
+            type="email"
+            required
+            autoComplete="email"
+            placeholder="Email *"
+            className={input}
+            aria-label="Email"
+          />
+          <input
+            name="location"
+            required
+            autoComplete="address-level2"
+            placeholder="City / property address *"
+            className={input}
+            aria-label="City or property address"
+          />
           {isHero ? (
             <input
               name="message"
               required
               placeholder="What do you need help with? *"
-              className={`${input} sm:col-span-2 lg:col-span-1`}
+              className={`${input} sm:col-span-2`}
               aria-label="Message"
             />
           ) : (
@@ -146,15 +163,6 @@ export function QuoteForm({
               className={`${input} resize-y`}
               aria-label="Message"
             />
-          )}
-          {isHero && (
-            <button
-              type="submit"
-              disabled={status === "sending"}
-              className="w-full rounded-full bg-brand-gold px-4 py-2.5 text-sm font-bold text-white shadow-sm transition hover:bg-brand-gold-light disabled:opacity-70 lg:col-span-1"
-            >
-              {status === "sending" ? "Sending…" : "Send request"}
-            </button>
           )}
         </div>
         <label className="flex items-start gap-2 text-xs text-stone-500">
@@ -172,15 +180,17 @@ export function QuoteForm({
             </a>
           </span>
         </label>
-        {!isHero && (
-          <button
-            type="submit"
-            disabled={status === "sending"}
-            className="w-full rounded-full bg-brand-gold px-6 py-3 text-sm font-bold text-white shadow-sm transition hover:bg-brand-gold-light disabled:opacity-70"
-          >
-            {status === "sending" ? "Sending…" : "Send free quote request"}
-          </button>
-        )}
+        <button
+          type="submit"
+          disabled={status === "sending"}
+          className="w-full rounded-full bg-brand-gold px-4 py-2.5 text-sm font-bold text-white shadow-sm transition hover:bg-brand-gold-light disabled:opacity-70 sm:py-3"
+        >
+          {status === "sending"
+            ? "Sending…"
+            : isHero
+              ? "Send request"
+              : "Send free quote request"}
+        </button>
       </form>
     );
   }

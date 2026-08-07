@@ -73,13 +73,14 @@ export async function submitQuote(payload: QuotePayload): Promise<SubmitResult> 
           from_name: payload.name,
           name: payload.name,
           phone: payload.phone,
-          email: payload.email || site.email,
+          email: payload.email || "",
           location: payload.location || "",
           service: payload.service || "",
           message: payload.message,
           source: payload.source || "",
           consent: payload.consent || "",
           botcheck: false,
+          // Reply directly to the customer when they provide an email
           replyto: payload.email || undefined,
         }),
       });
