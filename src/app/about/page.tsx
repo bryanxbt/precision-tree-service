@@ -4,7 +4,7 @@ import { site, values } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About",
-  description: `Meet the team behind ${site.name} — local tree care built on safety and trust.`,
+  description: `Meet the team behind ${site.name} — Greenwood, Indiana tree care built on safety and trust.`,
 };
 
 export default function AboutPage() {
@@ -19,9 +19,11 @@ export default function AboutPage() {
             Quintin &amp; Bryan — building a tree service the right way
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-stone-600">
-            {site.name} is {site.partners}. We started with a simple idea:
+            {site.name} is {site.partners} — a tree service based in{" "}
+            <strong>Greenwood, Indiana</strong>. We started with a simple idea:
             homeowners deserve skilled tree work without the runaround. We’re a
-            small crew focused on safety, communication, and finishing strong.
+            small Central Indiana crew focused on safety, communication, and
+            finishing strong.
           </p>
         </div>
       </section>
@@ -40,10 +42,11 @@ export default function AboutPage() {
           <div className="space-y-4 text-stone-600 leading-relaxed">
             <p>
               We’re just getting started, and every job is a chance to earn a
-              referral. Quintin is based in Kokomo; Bryan is based in Greenwood.
-              Together we cover tree work along that corridor — and we take the
-              time to explain options, protect your property, and price jobs
-              fairly.
+              referral. Our home base is <strong>Greenwood, Indiana</strong>{" "}
+              (Bryan); Quintin is based in Kokomo. Together we cover tree work
+              along the Greenwood–Kokomo corridor in Central Indiana — and we
+              take the time to explain options, protect your property, and price
+              jobs fairly.
             </p>
             <p>
               The name says who we are: <strong>Q</strong>uintin and{" "}

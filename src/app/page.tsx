@@ -205,8 +205,9 @@ export default function HomePage() {
                 Proudly serving {site.serviceArea}
               </h2>
               <p className="mt-2 max-w-xl text-stone-600">
-                Based in Kokomo and Greenwood, we take tree jobs in the towns
-                between us — removal, trimming, stumps, and storm cleanup.
+                Based in Greenwood, Indiana, with a partner in Kokomo — we take
+                tree jobs along that Central Indiana corridor: removal, trimming,
+                stumps, and storm cleanup.
               </p>
             </div>
             <Link
@@ -224,6 +225,7 @@ export default function HomePage() {
                 className="rounded-full border border-stone-200 bg-stone-50 px-4 py-2 text-sm font-medium text-stone-800 transition hover:border-brand-gold hover:bg-amber-50 hover:text-brand-gold-dark"
               >
                 {area.name}
+                {"homeBase" in area && area.homeBase ? " · Home base" : ", IN"}
               </Link>
             ))}
           </div>

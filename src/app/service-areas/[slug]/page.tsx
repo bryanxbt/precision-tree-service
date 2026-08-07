@@ -16,8 +16,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const area = serviceAreas.find((a) => a.slug === slug);
   if (!area) return {};
   return {
-    title: `Tree Services in ${area.name}`,
-    description: `Professional tree removal, trimming, stump grinding, and storm cleanup in ${area.name}. ${site.name} — free estimates.`,
+    title: `Tree Services in ${area.name}, Indiana`,
+    description: `Professional tree removal, trimming, stump grinding, and storm cleanup in ${area.name}, Indiana. ${site.name} is based in Greenwood, IN — free estimates.`,
   };
 }
 
@@ -37,13 +37,14 @@ export default async function ServiceAreaPage({ params }: Props) {
             / {area.name}
           </p>
           <h1 className="mt-2 max-w-2xl text-4xl font-bold tracking-tight text-stone-900">
-            Tree service in {area.name}
+            Tree service in {area.name}, Indiana
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-stone-600">{area.blurb}</p>
           <p className="mt-3 max-w-2xl text-stone-600">
-            {site.name} provides tree removal, trimming, stump grinding, lot
-            clearing, and storm response for homeowners and businesses in{" "}
-            {area.name}. Free estimates. Local crew you can rely on.
+            {site.name} is based in {site.headquarters} and provides tree
+            removal, trimming, stump grinding, lot clearing, and storm response
+            for homeowners and businesses in {area.name}, Indiana. Free
+            estimates. Local Central Indiana crew you can rely on.
           </p>
         </div>
       </section>
@@ -52,7 +53,7 @@ export default async function ServiceAreaPage({ params }: Props) {
         <div className="grid gap-10 lg:grid-cols-[1fr_0.9fr] lg:items-start">
           <div>
             <h2 className="text-2xl font-bold text-stone-900">
-              Services in {area.name}
+              Services in {area.name}, IN
             </h2>
             <ul className="mt-6 grid gap-3 sm:grid-cols-2">
               {services.map((s) => (
@@ -82,7 +83,7 @@ export default async function ServiceAreaPage({ params }: Props) {
       </section>
 
       <CTABanner
-        title={`Free tree service estimate in ${area.name}`}
+        title={`Free tree service estimate in ${area.name}, Indiana`}
         subtitle="Tell us about the job — we will get back with a clear next step."
       />
     </>

@@ -21,12 +21,12 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} | Tree Removal, Trimming & Storm Cleanup`,
+    default: `${site.name} | Greenwood, IN Tree Removal & Trimming`,
     template: `%s | ${site.name}`,
   },
   description: site.description,
   openGraph: {
-    title: `${site.name} | Tree services you can rely on`,
+    title: `${site.name} | Tree service in Greenwood, Indiana`,
     description: site.description,
     url: site.url,
     siteName: site.name,
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: site.name,
+    title: `${site.name} | Greenwood, Indiana`,
     description: site.description,
   },
   robots: {

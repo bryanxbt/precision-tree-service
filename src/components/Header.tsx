@@ -31,7 +31,9 @@ export function Header() {
             <span className="block truncate text-sm font-bold tracking-tight text-stone-900 sm:text-base">
               {site.name}
             </span>
-            <span className="text-xs text-brand-gold-dark/70">{site.serviceArea}</span>
+            <span className="text-xs text-brand-gold-dark/70">
+              {site.serviceAreaShort}
+            </span>
           </span>
         </Link>
 

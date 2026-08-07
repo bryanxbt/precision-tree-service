@@ -1,4 +1,4 @@
-import { faqs, site } from "@/lib/site";
+import { faqs, serviceAreas, site } from "@/lib/site";
 
 export function JsonLd() {
   const localBusiness = {
@@ -9,8 +9,27 @@ export function JsonLd() {
     url: site.url,
     telephone: site.phone,
     email: site.email,
-    areaServed: site.serviceArea,
     priceRange: "$$",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: site.city,
+      addressRegion: site.stateAbbr,
+      addressCountry: "US",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      // Greenwood, Indiana (approximate city center)
+      latitude: 39.6137,
+      longitude: -86.1067,
+    },
+    areaServed: serviceAreas.map((a) => ({
+      "@type": "City",
+      name: a.name,
+      containedInPlace: {
+        "@type": "State",
+        name: site.state,
+      },
+    })),
     openingHoursSpecification: site.hoursDetailed.map((h) => ({
       "@type": "OpeningHoursSpecification",
       dayOfWeek: h.day,
