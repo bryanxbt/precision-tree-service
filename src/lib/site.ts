@@ -19,7 +19,7 @@ export const site = {
   email: "hello@qbtreeservices.com",
   emailHref: "mailto:hello@qbtreeservices.com",
   /** Short area phrase used in hero, FAQ, and meta — corridor between partners */
-  serviceArea: "Kokomo to Greenwood",
+  serviceArea: "Greenwood to Kokomo",
   hours: "Mon–Sat 7am–6pm · Emergency 24/7",
   hoursDetailed: [
     { day: "Monday", time: "7:00am – 6:00pm" },
