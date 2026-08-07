@@ -1,11 +1,8 @@
 /**
  * Lead form delivery for static export (GitHub Pages).
  *
- * Default: FormSubmit.co → site.email (qbstrees@gmail.com).
- * Optional overrides at build time (repo Variables / .env.local):
- *   NEXT_PUBLIC_FORMSPREE_ID
- *   NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY
- *   NEXT_PUBLIC_FORMSUBMIT_EMAIL  (defaults to business email)
+ * Primary: Web3Forms (NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY) → qbstrees@gmail.com
+ * Fallbacks: Formspree, then FormSubmit (defaults to site.email)
  */
 
 import { site } from "@/lib/site";
@@ -35,9 +32,9 @@ function getWeb3Key() {
 }
 
 function getFormSubmitEmail() {
-  return (
-    process.env.NEXT_PUBLIC_FORMSUBMIT_EMAIL?.trim() || site.email
-  );
+  // Only use FormSubmit when explicitly configured — avoid double-routing
+  // when Web3Forms is the primary path.
+  return process.env.NEXT_PUBLIC_FORMSUBMIT_EMAIL?.trim() || "";
 }
 
 /** True when at least one lead endpoint is configured */
@@ -62,6 +59,43 @@ export async function submitQuote(payload: QuotePayload): Promise<SubmitResult> 
   const subject = `QB Tree Services quote — ${payload.name}${payload.service ? ` (${payload.service})` : ""}`;
 
   try {
+    // Prefer Web3Forms when configured
+    if (web3Key) {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          access_key: web3Key,
+          subject,
+          from_name: payload.name,
+          name: payload.name,
+          phone: payload.phone,
+          email: payload.email || site.email,
+          location: payload.location || "",
+          service: payload.service || "",
+          message: payload.message,
+          source: payload.source || "",
+          consent: payload.consent || "",
+          botcheck: false,
+          replyto: payload.email || undefined,
+        }),
+      });
+      const data = (await res.json().catch(() => ({}))) as {
+        success?: boolean;
+        message?: string;
+      };
+      if (!res.ok || data.success === false) {
+        return {
+          ok: false,
+          error: data.message || "Could not send your request. Please call us.",
+        };
+      }
+      return { ok: true };
+    }
+
     if (formspreeId) {
       const res = await fetch(`https://formspree.io/f/${formspreeId}`, {
         method: "POST",
@@ -82,33 +116,6 @@ export async function submitQuote(payload: QuotePayload): Promise<SubmitResult> 
         return {
           ok: false,
           error: data.error || "Could not send your request. Please call us.",
-        };
-      }
-      return { ok: true };
-    }
-
-    if (web3Key) {
-      const res = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          access_key: web3Key,
-          subject,
-          from_name: payload.name,
-          ...payload,
-        }),
-      });
-      const data = (await res.json().catch(() => ({}))) as {
-        success?: boolean;
-        message?: string;
-      };
-      if (!res.ok || data.success === false) {
-        return {
-          ok: false,
-          error: data.message || "Could not send your request. Please call us.",
         };
       }
       return { ok: true };
