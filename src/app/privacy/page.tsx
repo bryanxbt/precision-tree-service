@@ -100,7 +100,7 @@ export default function PrivacyPage() {
           <p>
             {site.name}
             <br />
-            Based in {site.headquarters} · Serving {site.serviceArea}
+            Serving {site.serviceArea}
             <br />
             {site.phone} · {site.email}
           </p>

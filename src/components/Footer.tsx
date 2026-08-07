@@ -30,8 +30,7 @@ export function Footer() {
             />
           </Link>
           <p className="mt-3 max-w-xs text-sm leading-relaxed text-blue-100/80">
-            {site.tagline}. Based in {site.headquarters}. Serving{" "}
-            {site.serviceArea}.
+            {site.tagline}. Serving {site.serviceArea}.
           </p>
           <a
             href={site.phoneHref}
@@ -91,7 +90,7 @@ export function Footer() {
                   href={`/service-areas/${a.slug}/`}
                   className="text-sm text-blue-100/90 transition hover:text-white"
                 >
-                  {a.name}, IN
+                  {a.name}
                 </Link>
               </li>
             ))}
@@ -145,11 +144,10 @@ export function Footer() {
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-4 text-xs text-blue-200/60 sm:flex-row sm:items-center sm:justify-between sm:px-6">
           <p>
-            © {new Date().getFullYear()} {site.name}. {site.headquarters}. All
-            rights reserved.
+            © {new Date().getFullYear()} {site.name}. All rights reserved.
           </p>
           <p className="flex flex-wrap items-center gap-x-3 gap-y-1">
-            <span>Insured · Central Indiana · Free estimates</span>
+            <span>Insured · Local crew · Free estimates</span>
             <Link href="/privacy/" className="hover:text-blue-100">
               Privacy
             </Link>

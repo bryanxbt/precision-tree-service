@@ -22,8 +22,7 @@ export default function BlogIndexPage() {
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-stone-600">
             Straight answers on cost, permits, safety, and timing — written for
-            homeowners in {site.region}. We&apos;re based in{" "}
-            {site.headquarters} and serve {site.serviceArea}.
+            homeowners in {site.serviceArea}.
           </p>
         </div>
       </section>

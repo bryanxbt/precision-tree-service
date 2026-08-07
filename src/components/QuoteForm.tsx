@@ -247,7 +247,7 @@ export function QuoteForm({
           name="location"
           required
           autoComplete="street-address"
-          placeholder="123 Oak St, Greenwood, IN"
+          placeholder="123 Oak St, Your City"
           className={fieldCls}
         />
       </div>

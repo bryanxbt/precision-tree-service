@@ -8,27 +8,31 @@ export const site = {
   name: "QB Tree Services",
   shortName: "QB",
   partners: "Quintin & Bryan",
-  tagline: "Central Indiana tree work from a crew you can count on",
+  tagline: "Local tree work from a crew you can count on",
   description:
-    "Tree removal, trimming, stump grinding, and storm cleanup in Greenwood, Indiana and along the corridor to Kokomo — done carefully, priced fairly, and finished clean.",
+    "Tree removal, trimming, stump grinding, and storm cleanup — done carefully, priced fairly, and finished clean. A small local crew homeowners can count on.",
   /** Public site URL (custom domain on GitHub Pages) */
   url: "https://qbtreeservices.com",
-  // --- Location (always pair city with Indiana — Greenwood exists in other states) ---
-  city: "Greenwood",
-  state: "Indiana",
-  stateAbbr: "IN",
-  /** Primary business base for GBP, schema, and “where are you from?” */
-  headquarters: "Greenwood, Indiana",
-  region: "Central Indiana",
+  /**
+   * Structured-data / Maps only (not marketing copy).
+   * Tells Google/etc. the business is in Indiana — not Greenwood TX or elsewhere.
+   */
+  geo: {
+    city: "Greenwood",
+    state: "Indiana",
+    stateAbbr: "IN",
+    country: "US",
+    /** Approximate Greenwood, IN city center */
+    latitude: 39.6137,
+    longitude: -86.1067,
+  },
   // --- Update these with real business details ---
   phone: "(765) 867-1823",
   phoneHref: "tel:+17658671823",
   email: "qbstrees@gmail.com",
   emailHref: "mailto:qbstrees@gmail.com",
-  /** Corridor phrase — always includes Indiana */
-  serviceArea: "Greenwood to Kokomo, Indiana",
-  /** Compact header line under the business name */
-  serviceAreaShort: "Greenwood, Indiana",
+  /** Short area phrase used in hero, FAQ, and meta — corridor between partners */
+  serviceArea: "Greenwood to Kokomo",
   hours: "Mon–Sat 7am–6pm · Emergency 24/7",
   hoursDetailed: [
     { day: "Monday", time: "7:00am – 6:00pm" },
@@ -180,80 +184,69 @@ export const services = [
 ] as const;
 
 /**
- * Cities we serve in Indiana (home base first: Greenwood, then corridor north to Kokomo).
+ * Cities along the corridor between partners (Kokomo north → Greenwood south).
  * Local SEO pages — keep to towns you will actually drive for.
  */
 export const serviceAreas = [
   {
-    slug: "greenwood",
-    name: "Greenwood",
-    state: "Indiana",
-    homeBase: true,
+    slug: "kokomo",
+    name: "Kokomo",
     blurb:
-      "Home base for QB Tree Services — tree removal, trimming, stump grinding, and storm cleanup for Greenwood, Indiana homes and properties.",
-  },
-  {
-    slug: "indianapolis",
-    name: "Indianapolis",
-    state: "Indiana",
-    blurb:
-      "Tree removal, trimming, and emergency storm work across Indianapolis, Indiana.",
-  },
-  {
-    slug: "fishers",
-    name: "Fishers",
-    state: "Indiana",
-    blurb:
-      "Reliable tree care for Fishers, Indiana homeowners — from trim jobs to full removals.",
-  },
-  {
-    slug: "carmel",
-    name: "Carmel",
-    state: "Indiana",
-    blurb:
-      "Professional tree work in Carmel, Indiana with careful cleanup and free estimates.",
-  },
-  {
-    slug: "noblesville",
-    name: "Noblesville",
-    state: "Indiana",
-    blurb:
-      "Tree removal, trimming, and storm response serving Noblesville, Indiana properties.",
-  },
-  {
-    slug: "westfield",
-    name: "Westfield",
-    state: "Indiana",
-    blurb:
-      "Tree service in Westfield, Indiana for removals, stump grinding, and lot clearing.",
-  },
-  {
-    slug: "arcadia",
-    name: "Arcadia",
-    state: "Indiana",
-    blurb:
-      "Tree removal, trimming, stump grinding, and storm cleanup for Arcadia, Indiana homes and properties.",
-  },
-  {
-    slug: "cicero",
-    name: "Cicero",
-    state: "Indiana",
-    blurb:
-      "Residential and light commercial tree care for Cicero, Indiana and nearby neighborhoods.",
+      "Tree removal, trimming, stump grinding, and storm cleanup for Kokomo homes and businesses.",
   },
   {
     slug: "tipton",
     name: "Tipton",
-    state: "Indiana",
     blurb:
-      "Local tree service in Tipton, Indiana — safe removals, pruning, and full cleanup.",
+      "Local tree service in Tipton — safe removals, pruning, and full cleanup.",
   },
   {
-    slug: "kokomo",
-    name: "Kokomo",
-    state: "Indiana",
+    slug: "cicero",
+    name: "Cicero",
     blurb:
-      "Tree removal, trimming, stump grinding, and storm cleanup for Kokomo, Indiana homes and businesses.",
+      "Residential and light commercial tree care for Cicero and nearby neighborhoods.",
+  },
+  {
+    slug: "arcadia",
+    name: "Arcadia",
+    blurb:
+      "Tree removal, trimming, stump grinding, and storm cleanup for Arcadia homes and properties.",
+  },
+  {
+    slug: "westfield",
+    name: "Westfield",
+    blurb:
+      "Tree service in Westfield for removals, stump grinding, and lot clearing.",
+  },
+  {
+    slug: "noblesville",
+    name: "Noblesville",
+    blurb:
+      "Tree removal, trimming, and storm response serving Noblesville properties.",
+  },
+  {
+    slug: "carmel",
+    name: "Carmel",
+    blurb:
+      "Professional tree work in Carmel with careful cleanup and free estimates.",
+  },
+  {
+    slug: "fishers",
+    name: "Fishers",
+    blurb:
+      "Reliable tree care for Fishers homeowners — from trim jobs to full removals.",
+  },
+  {
+    slug: "indianapolis",
+    name: "Indianapolis",
+    blurb:
+      "Tree removal, trimming, and emergency storm work across Indianapolis.",
+  },
+  {
+    slug: "greenwood",
+    name: "Greenwood",
+    blurb:
+      "Tree removal, trimming, stump grinding, and storm cleanup for Greenwood homes and properties.",
   },
 ] as const;
 
@@ -310,7 +303,7 @@ export const faqs = [
   {
     question: "What areas do you service?",
     answer:
-      `QB Tree Services is based in Greenwood, Indiana. We work the Central Indiana corridor from Greenwood north through Indianapolis, Fishers, Carmel, Noblesville, Westfield, and up to Kokomo — one partner in Greenwood, one in Kokomo. If you are close but not listed, still reach out.`,
+      `We work the corridor from ${site.serviceArea} — one partner based in Kokomo, one in Greenwood — so we cover jobs between our homes and nearby towns. If you are close but not listed, still reach out.`,
   },
   {
     question: "Are you insured?",
@@ -431,15 +424,15 @@ export const values = [
   {
     title: "Local & accountable",
     description:
-      "Quintin and Bryan — a small Central Indiana crew based in Greenwood, building a reputation one job at a time.",
+      "Quintin and Bryan — a small team building a reputation in our community, one job at a time.",
   },
 ] as const;
 
 export const trustPoints = [
-  "Based in Greenwood, IN",
   "Free written estimates",
   "Insured crew",
   "Cleanup available",
   "Residential & commercial",
   "Storm response",
+  "Local & accountable",
 ] as const;

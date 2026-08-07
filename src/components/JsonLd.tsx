@@ -1,5 +1,9 @@
 import { faqs, serviceAreas, site } from "@/lib/site";
 
+/**
+ * Machine-readable business location for search engines.
+ * Keeps NAP/geo in Indiana without changing customer-facing copy.
+ */
 export function JsonLd() {
   const localBusiness = {
     "@context": "https://schema.org",
@@ -12,22 +16,21 @@ export function JsonLd() {
     priceRange: "$$",
     address: {
       "@type": "PostalAddress",
-      addressLocality: site.city,
-      addressRegion: site.stateAbbr,
-      addressCountry: "US",
+      addressLocality: site.geo.city,
+      addressRegion: site.geo.stateAbbr,
+      addressCountry: site.geo.country,
     },
     geo: {
       "@type": "GeoCoordinates",
-      // Greenwood, Indiana (approximate city center)
-      latitude: 39.6137,
-      longitude: -86.1067,
+      latitude: site.geo.latitude,
+      longitude: site.geo.longitude,
     },
     areaServed: serviceAreas.map((a) => ({
       "@type": "City",
       name: a.name,
       containedInPlace: {
         "@type": "State",
-        name: site.state,
+        name: site.geo.state,
       },
     })),
     openingHoursSpecification: site.hoursDetailed.map((h) => ({

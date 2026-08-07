@@ -6,7 +6,7 @@ import { galleryItems, site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Gallery",
-  description: `Recent tree work and project examples from ${site.name} in Greenwood, Indiana and Central Indiana.`,
+  description: `Recent tree work and project examples from ${site.name}.`,
 };
 
 export default function GalleryPage() {

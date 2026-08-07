@@ -4,7 +4,7 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact / Free Quote",
-  description: `Request a free tree service estimate from ${site.name} in Greenwood, Indiana.`,
+  description: `Request a free tree service estimate from ${site.name}.`,
 };
 
 export default function ContactPage() {
@@ -67,10 +67,6 @@ export default function ContactPage() {
                 <div>
                   <dt className="font-medium text-stone-500">Hours</dt>
                   <dd className="mt-0.5 text-stone-800">{site.hours}</dd>
-                </div>
-                <div>
-                  <dt className="font-medium text-stone-500">Based in</dt>
-                  <dd className="mt-0.5 text-stone-800">{site.headquarters}</dd>
                 </div>
                 <div>
                   <dt className="font-medium text-stone-500">Service area</dt>

@@ -75,7 +75,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: "How we handle it",
         paragraphs: [
-          "When you request a quote, tell us your city and whether you are in an HOA. We will flag anything that commonly needs a permit in the areas we serve (Greenwood, Indiana through Kokomo — including Indianapolis, Fishers, Carmel, Noblesville, Westfield, Cicero, Tipton, and nearby). If a formal permit is required, we can discuss who files it and how it affects timing.",
+          "When you request a quote, tell us your city and whether you are in an HOA. We will flag anything that commonly needs a permit in the areas we serve (Kokomo through Greenwood — including Tipton, Cicero, Westfield, Noblesville, Carmel, Fishers, Indianapolis, and nearby). If a formal permit is required, we can discuss who files it and how it affects timing.",
           "Emergency removals after storms — trees on houses, blocked driveways, or imminent hazards — are usually treated differently. Safety comes first; paperwork can follow where allowed.",
         ],
       },
