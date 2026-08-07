@@ -2,7 +2,7 @@
 
 Goal: turn the website into a **job-getting funnel** (calls + quote leads), then feed it with local visibility.
 
-Live preview: https://bryanxbt.github.io/qb-tree-services/
+Live site: https://qbtreeservices.com/
 
 ---
 
@@ -77,7 +77,7 @@ Local test: copy `.env.example` → `.env.local`, fill one value, `npm run dev`,
 
 ## B. Strongly recommended (first 2 weeks)
 
-- [ ] Custom domain (e.g. `qbtreeservices.com`) → point to GitHub Pages → update `site.url` in `src/lib/site.ts`
+- [x] Custom domain `qbtreeservices.com` → GitHub Pages (build serves at domain root; `site.url` set)
 - [ ] Facebook page + Instagram (link in `site.social`)
 - [ ] Real job photos replace AI gallery when available
 - [ ] After first 3–5 happy customers: Google review links; set `placeholder: false` on real quotes in `site.ts`

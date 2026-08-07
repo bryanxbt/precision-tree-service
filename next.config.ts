@@ -1,13 +1,16 @@
 import type { NextConfig } from "next";
 
-/** Repo name on GitHub (used for project Pages base path). */
+/**
+ * Optional path prefix for project Pages without a custom domain
+ * (e.g. username.github.io/qb-tree-services). Leave unset for
+ * qbtreeservices.com, which is served at the domain root.
+ */
 const repoName = "qb-tree-services";
-
-const isGitHubPages = process.env.GITHUB_PAGES === "true";
-const basePath = isGitHubPages ? `/${repoName}` : "";
+const isProjectPath = process.env.GITHUB_PAGES === "true";
+const basePath = isProjectPath ? `/${repoName}` : "";
 
 const nextConfig: NextConfig = {
-  // Static site so GitHub Pages can host a public preview URL
+  // Static export for GitHub Pages
   output: "export",
   images: { unoptimized: true },
   trailingSlash: true,
@@ -15,7 +18,7 @@ const nextConfig: NextConfig = {
   env: {
     NEXT_PUBLIC_BASE_PATH: basePath,
   },
-  ...(isGitHubPages
+  ...(isProjectPath
     ? {
         basePath,
         assetPrefix: `${basePath}/`,

@@ -1,7 +1,7 @@
 /**
- * GitHub Pages serves the site under /qb-tree-services.
+ * Optional base path for project Pages without a custom domain.
  * Next/Image does not always prefix public asset URLs with basePath on static export,
- * so we apply it ourselves for public/ files.
+ * so we apply it ourselves for public/ files. Empty when using qbtreeservices.com.
  */
 export const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 

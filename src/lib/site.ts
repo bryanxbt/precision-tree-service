@@ -11,8 +11,8 @@ export const site = {
   tagline: "Local tree work from a crew you can count on",
   description:
     "Tree removal, trimming, stump grinding, and storm cleanup — done carefully, priced fairly, and finished clean. A small local crew homeowners can count on.",
-  /** Public site URL (GitHub Pages preview for now) */
-  url: "https://bryanxbt.github.io/qb-tree-services",
+  /** Public site URL (custom domain on GitHub Pages) */
+  url: "https://qbtreeservices.com",
   // --- Update these with real business details ---
   phone: "(765) 867-1823",
   phoneHref: "tel:+17658671823",

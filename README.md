@@ -9,11 +9,11 @@ Marketing website + lead funnel for **QB Tree Services** (Quintin & Bryan) — l
 - Next.js (App Router) · TypeScript · Tailwind CSS
 - Static export for GitHub Pages
 
-## Live preview
+## Live site
 
-https://bryanxbt.github.io/qb-tree-services/
+https://qbtreeservices.com/
 
-Every push to `main` rebuilds and updates that link (GitHub Actions).
+Every push to `main` rebuilds and deploys via GitHub Actions (custom domain on GitHub Pages).
 
 ## Getting started
 
