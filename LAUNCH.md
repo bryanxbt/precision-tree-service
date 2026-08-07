@@ -26,27 +26,17 @@ Google / Facebook / flyer / referral
 
 ### 1. Connect the quote form (critical)
 
-Without this, form submissions go nowhere.
+**Status:** FormSubmit.co → `qbstrees@gmail.com` (defaults from `site.email`).
 
-**Recommended (easiest):** [Web3Forms](https://web3forms.com) (free)
+**One-time activation:** After the first quote submit, FormSubmit emails `qbstrees@gmail.com` with a confirmation link. Click it once, then real leads arrive in Gmail.
 
-1. Sign up → get an **access key** (sends to your real inbox).
-2. GitHub repo `bryanxbt/qb-tree-services` → **Settings → Secrets and variables → Actions → Variables**
-3. Add: `NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY` = your key
-4. Push any commit (or re-run the Deploy workflow) so Pages rebuilds.
+Optional overrides (repo Variables): `NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY`, `NEXT_PUBLIC_FORMSPREE_ID`, or `NEXT_PUBLIC_FORMSUBMIT_EMAIL`.
 
-**Alternatives:**
-
-| Service | Variable |
-|--------|----------|
-| Formspree | `NEXT_PUBLIC_FORMSPREE_ID` |
-| FormSubmit | `NEXT_PUBLIC_FORMSUBMIT_EMAIL` |
-
-Local test: copy `.env.example` → `.env.local`, fill one value, `npm run dev`, submit the form.
+Local test: `npm run dev`, submit the form, check Gmail (and spam).
 
 ### 2. Confirm inbox & phone
 
-- [ ] `hello@qbtreeservices.com` exists and is monitored (or change email in `src/lib/site.ts`)
+- [x] Official email: `qbstrees@gmail.com` (`src/lib/site.ts`)
 - [ ] Phone `(765) 867-1823` rings / texts to someone who can answer **same day**
 - [ ] Voicemail says QB Tree Services + “we’ll call back ASAP”
 

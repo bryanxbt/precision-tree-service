@@ -1,10 +1,14 @@
 /**
  * Lead form delivery for static export (GitHub Pages).
- * Configure ONE of these at build time (repo Variables / .env.local):
- *   NEXT_PUBLIC_FORMSPREE_ID          e.g. xyzabcde
- *   NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY  from https://web3forms.com
- *   NEXT_PUBLIC_FORMSUBMIT_EMAIL      e.g. hello@qbtreeservices.com
+ *
+ * Default: FormSubmit.co → site.email (qbstrees@gmail.com).
+ * Optional overrides at build time (repo Variables / .env.local):
+ *   NEXT_PUBLIC_FORMSPREE_ID
+ *   NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY
+ *   NEXT_PUBLIC_FORMSUBMIT_EMAIL  (defaults to business email)
  */
+
+import { site } from "@/lib/site";
 
 export type QuotePayload = {
   name: string;
@@ -31,7 +35,9 @@ function getWeb3Key() {
 }
 
 function getFormSubmitEmail() {
-  return process.env.NEXT_PUBLIC_FORMSUBMIT_EMAIL?.trim() || "";
+  return (
+    process.env.NEXT_PUBLIC_FORMSUBMIT_EMAIL?.trim() || site.email
+  );
 }
 
 /** True when at least one lead endpoint is configured */
@@ -108,7 +114,7 @@ export async function submitQuote(payload: QuotePayload): Promise<SubmitResult> 
       return { ok: true };
     }
 
-    // FormSubmit.co — free, confirms the inbox once
+    // FormSubmit.co — free; first submit sends an activation email to confirm the inbox
     const res = await fetch(
       `https://formsubmit.co/ajax/${encodeURIComponent(formSubmitEmail)}`,
       {
@@ -118,17 +124,29 @@ export async function submitQuote(payload: QuotePayload): Promise<SubmitResult> 
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          ...payload,
+          name: payload.name,
+          phone: payload.phone,
+          email: payload.email || "",
+          location: payload.location || "",
+          service: payload.service || "",
+          message: payload.message,
+          source: payload.source || "",
+          consent: payload.consent || "",
           _subject: subject,
           _template: "table",
           _captcha: "false",
+          _replyto: payload.email || undefined,
         }),
       },
     );
+    const data = (await res.json().catch(() => ({}))) as {
+      success?: string | boolean;
+      message?: string;
+    };
     if (!res.ok) {
       return {
         ok: false,
-        error: "Could not send your request. Please call us.",
+        error: data.message || "Could not send your request. Please call us.",
       };
     }
     return { ok: true };

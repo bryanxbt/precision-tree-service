@@ -36,9 +36,10 @@ Pick **one** and set it as a GitHub Actions **Variable** (or in `.env.local`):
 
 | Variable | Service |
 |----------|---------|
-| `NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY` | [Web3Forms](https://web3forms.com) (recommended) |
+| *(default)* | [FormSubmit](https://formsubmit.co) → `qbstrees@gmail.com` |
+| `NEXT_PUBLIC_FORMSUBMIT_EMAIL` | Override FormSubmit destination |
+| `NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY` | [Web3Forms](https://web3forms.com) |
 | `NEXT_PUBLIC_FORMSPREE_ID` | [Formspree](https://formspree.io) |
-| `NEXT_PUBLIC_FORMSUBMIT_EMAIL` | [FormSubmit](https://formsubmit.co) |
 
 Optional analytics:
 

@@ -16,8 +16,8 @@ export const site = {
   // --- Update these with real business details ---
   phone: "(765) 867-1823",
   phoneHref: "tel:+17658671823",
-  email: "hello@qbtreeservices.com",
-  emailHref: "mailto:hello@qbtreeservices.com",
+  email: "qbstrees@gmail.com",
+  emailHref: "mailto:qbstrees@gmail.com",
   /** Short area phrase used in hero, FAQ, and meta — corridor between partners */
   serviceArea: "Greenwood to Kokomo",
   hours: "Mon–Sat 7am–6pm · Emergency 24/7",
